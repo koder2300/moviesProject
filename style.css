@@ -6,15 +6,16 @@ body {
   justify-content: center;
 }
 .container {
-  position: relative;
   background-color: blue;
 }
 .addClass {
   color: black;
-  background-color: red;
+  background-color: white;
   width: 50vw;
   height: 10vh;
   margin: 10px;
+  position: relative;
+  border-radius: 10px;
 }
 .newPClass {
   position: absolute;

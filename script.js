@@ -55,14 +55,20 @@ const addContent = () => {
     // }
     let newDiv = document.createElement("div");
     let newP = document.createElement("p");
-    let newContent = document.createTextNode(el.author);
-    newP = document.createTextNode(el.genres);
+    let contentAuthor = document.createTextNode(el.author);
+    let contentTitle = document.createTextNode(el.title);
+    let contentGenres = document.createTextNode(el.genres);
+    let contentRating = document.createTextNode(el.rating);
     containerAll.classList.add("container");
-    newP.className = "newPClass";
+    // contentTitle.style.color = "yellow";
+    // newP.className = "newPClass";
+    // newDiv.classList.add("newPClass");
     // newP.classList.add("newPClass");
     newDiv.classList.add("addClass");
-    newDiv.appendChild(newContent);
-    newDiv.appendChild(newP);
+    newDiv.appendChild(contentAuthor);
+    newDiv.appendChild(contentTitle);
+    newDiv.appendChild(contentGenres);
+    newDiv.appendChild(contentRating);
     containerAll.appendChild(newDiv);
   });
 };
