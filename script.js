@@ -135,5 +135,3 @@ addContent(
   movies4Genres,
   movies4Rating
 );
-
-//chce powielic kod tylko ze dodaje do kontenera to samo a chce dodac z inna pozycja
