@@ -44,32 +44,96 @@ const movies = [
   },
 ];
 
-const containerAll = document.querySelector(".container");
+let movies1Title = movies[0].title;
+let movies2Title = movies[1].title;
+let movies3Title = movies[2].title;
+let movies4Title = movies[3].title;
 //
-const addContent = () => {
-  movies.forEach((el) => {
-    console.log(el.genres);
-    // for (const [key, value] of Object.entries(el)) {
-    //   console.log(`${key} : ${value}`);
-    //   // console.log(typeof key);
-    // }
-    let newDiv = document.createElement("div");
-    let newP = document.createElement("p");
-    let contentAuthor = document.createTextNode(el.author);
-    let contentTitle = document.createTextNode(el.title);
-    let contentGenres = document.createTextNode(el.genres);
-    let contentRating = document.createTextNode(el.rating);
-    containerAll.classList.add("container");
-    // contentTitle.style.color = "yellow";
-    // newP.className = "newPClass";
-    // newDiv.classList.add("newPClass");
-    // newP.classList.add("newPClass");
-    newDiv.classList.add("addClass");
-    newDiv.appendChild(contentAuthor);
-    newDiv.appendChild(contentTitle);
-    newDiv.appendChild(contentGenres);
-    newDiv.appendChild(contentRating);
-    containerAll.appendChild(newDiv);
-  });
+let movies1Author = movies[0].author;
+let movies2Author = movies[1].author;
+let movies3Author = movies[2].author;
+let movies4Author = movies[3].author;
+//
+let movies1Genres = movies[0].genres;
+let movies2Genres = movies[1].genres;
+let movies3Genres = movies[2].genres;
+let movies4Genres = movies[3].genres;
+//
+let movies1Rating = movies[0].rating;
+let movies2Rating = movies[1].rating;
+let movies3Rating = movies[2].rating;
+let movies4Rating = movies[3].rating;
+console.log(movies1Title);
+//
+const containerAll = document.querySelector(".container");
+const containerAll2 = document.querySelector(".container2");
+const containerAll3 = document.querySelector(".container3");
+const containerAll4 = document.querySelector(".container4");
+const addContent = (el, title, author, genres, rating) => {
+  // movies.forEach((element) => {
+  //   console.log(element.author);
+  // });
+
+  //
+  let newDivCont1 = document.createElement("div");
+  let newDivCont2 = document.createElement("div");
+  let newDivCont3 = document.createElement("div");
+  let newDivCont4 = document.createElement("div");
+  let newDivCont5 = document.createElement("div");
+  //
+  let contentTitle = document.createTextNode(title);
+  let contentAuthor = document.createTextNode(author);
+  let contentGenres = document.createTextNode(genres);
+  let contentRating = document.createTextNode(rating);
+  //
+  newDivCont1.classList.add("positionFirst");
+  newDivCont2.classList.add("positionAuthor");
+  newDivCont3.classList.add("positionGenres");
+  newDivCont4.classList.add("positionRating");
+  newDivCont5.classList.add("positionTitle");
+  //
+  newDivCont5.appendChild(contentTitle);
+  newDivCont4.appendChild(contentRating);
+  newDivCont3.appendChild(contentGenres);
+  newDivCont2.appendChild(contentAuthor);
+  //
+  newDivCont2.appendChild(newDivCont5);
+  newDivCont2.appendChild(newDivCont3);
+  newDivCont2.appendChild(newDivCont4);
+  //
+  newDivCont1.appendChild(newDivCont2);
+  //
+  el.appendChild(newDivCont1);
+  // body.appendChild(newDivCont1);
+  el.classList.add("container");
 };
-addContent();
+addContent(
+  containerAll,
+  movies1Title,
+  movies1Author,
+  movies1Genres,
+  movies1Rating
+);
+addContent(
+  containerAll2,
+  movies2Title,
+  movies2Author,
+  movies2Genres,
+  movies2Rating
+);
+addContent(
+  containerAll3,
+  movies3Title,
+  movies3Author,
+  movies3Genres,
+  movies3Rating
+);
+addContent(
+  containerAll4,
+  movies4Title,
+  movies4Author,
+  movies4Genres,
+  movies4Rating
+);
+
+//chce powielic kod tylko ze dodaje do kontenera to samo a chce dodac z inna pozycja
