@@ -44,35 +44,38 @@ const movies = [
   },
 ];
 
-let movies1Title = movies[0].title;
-let movies2Title = movies[1].title;
-let movies3Title = movies[2].title;
-let movies4Title = movies[3].title;
-//
-let movies1Author = movies[0].author;
-let movies2Author = movies[1].author;
-let movies3Author = movies[2].author;
-let movies4Author = movies[3].author;
-//
-let movies1Genres = movies[0].genres;
-let movies2Genres = movies[1].genres;
-let movies3Genres = movies[2].genres;
-let movies4Genres = movies[3].genres;
-//
-let movies1Rating = movies[0].rating;
-let movies2Rating = movies[1].rating;
-let movies3Rating = movies[2].rating;
-let movies4Rating = movies[3].rating;
-console.log(movies1Title);
+let movies1Title = movies.title;
+let movies1Author = movies.author;
+let movies1Genres = movies.genres;
+let movies1Rating = movies.rating;
 //
 const containerAll = document.querySelector(".container");
-const containerAll2 = document.querySelector(".container2");
-const containerAll3 = document.querySelector(".container3");
-const containerAll4 = document.querySelector(".container4");
+//
 const addContent = (el, title, author, genres, rating) => {
   // movies.forEach((element) => {
   //   console.log(element.author);
   // });
+  //
+  let newAuthor = document.createElement("p");
+  let newTitle = document.createElement("p");
+  let newGenres = document.createElement("p");
+  let newRating = document.createElement("p");
+  //
+  newAuthor.classList.add("positionAuthorType");
+  newTitle.classList.add("positionTitleType");
+  newGenres.classList.add("positionGenresType");
+  newRating.classList.add("positionRatingType");
+  //
+  let authorContent = document.createTextNode("Autor: ");
+  let titleContent = document.createTextNode("Tytuł: ");
+  let genresContent = document.createTextNode("gatunek: ");
+  let ratingContent = document.createTextNode("ocena: ");
+  //
+  newAuthor.appendChild(authorContent);
+  newTitle.appendChild(titleContent);
+  newGenres.appendChild(genresContent);
+  newRating.appendChild(ratingContent);
+  //
 
   //
   let newDivCont1 = document.createElement("div");
@@ -86,52 +89,67 @@ const addContent = (el, title, author, genres, rating) => {
   let contentGenres = document.createTextNode(genres);
   let contentRating = document.createTextNode(rating);
   //
-  newDivCont1.classList.add("positionFirst");
+
+  //
+  newDivCont1.classList.add("positionFirst", "displayGrid");
   newDivCont2.classList.add("positionAuthor");
   newDivCont3.classList.add("positionGenres");
   newDivCont4.classList.add("positionRating");
   newDivCont5.classList.add("positionTitle");
+  //
+  newDivCont1.appendChild(newAuthor);
+  newDivCont1.appendChild(newTitle);
+  newDivCont1.appendChild(newGenres);
+  newDivCont1.appendChild(newRating);
   //
   newDivCont5.appendChild(contentTitle);
   newDivCont4.appendChild(contentRating);
   newDivCont3.appendChild(contentGenres);
   newDivCont2.appendChild(contentAuthor);
   //
-  newDivCont2.appendChild(newDivCont5);
-  newDivCont2.appendChild(newDivCont3);
-  newDivCont2.appendChild(newDivCont4);
-  //
+  newDivCont1.appendChild(newDivCont5);
+  newDivCont1.appendChild(newDivCont3);
+  newDivCont1.appendChild(newDivCont4);
   newDivCont1.appendChild(newDivCont2);
   //
   el.appendChild(newDivCont1);
   // body.appendChild(newDivCont1);
-  el.classList.add("container");
+  el.classList.add("containerFlex");
 };
-addContent(
-  containerAll,
-  movies1Title,
-  movies1Author,
-  movies1Genres,
-  movies1Rating
-);
-addContent(
-  containerAll2,
-  movies2Title,
-  movies2Author,
-  movies2Genres,
-  movies2Rating
-);
-addContent(
-  containerAll3,
-  movies3Title,
-  movies3Author,
-  movies3Genres,
-  movies3Rating
-);
-addContent(
-  containerAll4,
-  movies4Title,
-  movies4Author,
-  movies4Genres,
-  movies4Rating
-);
+for (let i = 0; i < movies.length; i++) {
+  addContent(
+    containerAll,
+    movies[i].title,
+    movies[i].author,
+    movies[i].genres,
+    movies[i].rating
+  );
+}
+// addContent(
+//   containerAll,
+//   movies1Title,
+//   movies1Author,
+//   movies1Genres,
+//   movies1Rating
+// );
+// addContent(
+//   containerAll2,
+//   movies2Title,
+//   movies2Author,
+//   movies2Genres,
+//   movies2Rating
+// );
+// addContent(
+//   containerAll3,
+//   movies3Title,
+//   movies3Author,
+//   movies3Genres,
+//   movies3Rating
+// );
+// addContent(
+//   containerAll4,
+//   movies4Title,
+//   movies4Author,
+//   movies4Genres,
+//   movies4Rating
+// );
