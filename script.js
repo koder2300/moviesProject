@@ -91,7 +91,7 @@ const addContent = (el, title, author, genres, rating) => {
   //
 
   //
-  newDivCont1.classList.add("positionFirst", "displayGrid");
+  newDivCont1.classList.add("positionFirst");
   newDivCont2.classList.add("positionAuthor");
   newDivCont3.classList.add("positionGenres");
   newDivCont4.classList.add("positionRating");
@@ -113,8 +113,6 @@ const addContent = (el, title, author, genres, rating) => {
   newDivCont1.appendChild(newDivCont2);
   //
   el.appendChild(newDivCont1);
-  // body.appendChild(newDivCont1);
-  el.classList.add("containerFlex");
 };
 for (let i = 0; i < movies.length; i++) {
   addContent(
