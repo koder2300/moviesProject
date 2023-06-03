@@ -56,10 +56,10 @@ const addContent = (el, title, author, genres, rating) => {
   //   console.log(element.author);
   // });
   //
-  let newAuthor = document.createElement("p");
-  let newTitle = document.createElement("p");
-  let newGenres = document.createElement("p");
-  let newRating = document.createElement("p");
+  let newAuthor = document.createElement("div");
+  let newTitle = document.createElement("div");
+  let newGenres = document.createElement("div");
+  let newRating = document.createElement("div");
   //
   newAuthor.classList.add("positionAuthorType");
   newTitle.classList.add("positionTitleType");
