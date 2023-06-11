@@ -44,12 +44,17 @@ const movies = [
   },
 ];
 
+//
+
+//
+
 let movies1Title = movies.title;
 let movies1Author = movies.author;
 let movies1Genres = movies.genres;
 let movies1Rating = movies.rating;
+
 //
-const containerAll = document.querySelector(".container");
+const containerAll = document.querySelector(".containerAll");
 //
 const addContent = (el, title, author, genres, rating) => {
   // movies.forEach((element) => {
@@ -66,10 +71,11 @@ const addContent = (el, title, author, genres, rating) => {
   newGenres.classList.add("positionGenresType");
   newRating.classList.add("positionRatingType");
   //
+
   let authorContent = document.createTextNode("Autor: ");
   let titleContent = document.createTextNode("Tytuł: ");
-  let genresContent = document.createTextNode("gatunek: ");
-  let ratingContent = document.createTextNode("ocena: ");
+  let genresContent = document.createTextNode("Gatunki: ");
+  let ratingContent = document.createTextNode("Ocena: ");
   //
   newAuthor.appendChild(authorContent);
   newTitle.appendChild(titleContent);
@@ -91,7 +97,7 @@ const addContent = (el, title, author, genres, rating) => {
   //
 
   //
-  newDivCont1.classList.add("positionFirst");
+  newDivCont1.classList.add("container");
   newDivCont2.classList.add("positionAuthor");
   newDivCont3.classList.add("positionGenres");
   newDivCont4.classList.add("positionRating");

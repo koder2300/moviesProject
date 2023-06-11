@@ -1,31 +1,21 @@
 body {
   box-sizing: border-box;
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0;
   padding: 0;
   position: relative;
   font-size: smaller;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  font-family: sans-serif;
+}
+.containerAll {
+  display: grid;
+  gap: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
 }
 .container {
-  width: 1000px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.pText {
-  font-weight: bold;
-  width: 200px;
-  height: 35px;
-  margin-bottom: 5px;
-  padding: 5px;
-}
-.positionFirst {
   border-radius: 10px;
   /* width: 1000px; */
   height: 70px;
@@ -36,14 +26,24 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.pText {
+  font-weight: bold;
+  width: 200px;
+  height: 35px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
 .positionGenres {
   order: 8;
   flex-basis: 50%;
 }
 .positionGenresType {
   order: 7;
-  flex-basis: 10%;
+  flex-basis: 7.5%;
   text-align: right;
+  margin-right: 0.5%;
   /* margin: 0;
   padding: 0; */
 }
@@ -56,34 +56,40 @@ body {
   text-align: right;
   /* margin: 0;
   padding: 0; */
-  flex-basis: 90%;
+  flex-basis: 89.5%;
+  margin-right: 0.5%;
 }
 
 .positionAuthor {
   order: 6;
   text-align: left;
-  flex-basis: 30%;
+  flex-basis: 15%;
 }
 .positionAuthorType {
   order: 5;
-  flex-basis: 10%;
+  flex-basis: 9.5%;
   text-align: right;
+  margin-right: 0.5%;
   /* margin: 0; */
 }
 .positionTitle {
   order: 2;
   flex-basis: 90%;
+  font-weight: bold;
 }
 .positionTitleType {
   order: 1;
   text-align: right;
-  flex-basis: 10%;
+  flex-basis: 9.5%;
+  margin-right: 0.5%;
+  font-weight: bold;
   /* margin: 0;
   padding: 0; */
 }
-
+@media only screen and (max-width: 1440px) {
+}
 @media only screen and (max-width: 1024px) {
-  .container {
+  .containerAll {
     width: 700px;
   }
   .positionFirst {
@@ -96,7 +102,7 @@ body {
     margin: 0;
   }
   .positionGenres {
-    flex-basis: 50%;
+    flex-basis: 48%;
     /* flex-grow: 0;
     flex-shrink: 0; */
   }
@@ -117,32 +123,34 @@ body {
   }
 }
 @media only screen and (max-width: 768px) {
-  .positionFirst {
+  /* .positionFirst {
     width: 600px;
     height: 50px;
-  }
+  } */
 
   .pText {
     width: 200px;
     height: 40px;
   }
-  .container {
-    top: 50%;
-    left: 60%;
+  .containerAll {
+    width: 600px;
+    height: 50px;
   }
 }
 @media only screen and (max-width: 480px) {
   .positionFirst {
+  }
+  .container {
     width: 500px;
     height: 140px;
   }
-  .positionFirst * {
+  .container * {
     height: 30px;
   }
-  .container {
+  /* .container {
     left: 135%;
     top: 105%;
-  }
+  } */
   .positionGenres {
     flex-basis: 87.5%;
     order: 6;
