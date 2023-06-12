@@ -44,81 +44,92 @@ const movies = [
   },
 ];
 
-//
-
-//
-
-let movies1Title = movies.title;
-let movies1Author = movies.author;
-let movies1Genres = movies.genres;
-let movies1Rating = movies.rating;
-
-//
 const containerAll = document.querySelector(".containerAll");
 //
 const addContent = (el, title, author, genres, rating) => {
-  // movies.forEach((element) => {
-  //   console.log(element.author);
-  // });
   //
-  let newAuthor = document.createElement("div");
-  let newTitle = document.createElement("div");
-  let newGenres = document.createElement("div");
-  let newRating = document.createElement("div");
-  //
-  newAuthor.classList.add("positionAuthorType");
-  newTitle.classList.add("positionTitleType");
-  newGenres.classList.add("positionGenresType");
-  newRating.classList.add("positionRatingType");
+  //  LIST CREATED ELEMENT
+  let list = document.createElement("div");
+  let divList = document.createElement("div");
+  let listLeftColumn = document.createElement("div");
+  let listCenterColumn = document.createElement("div");
+  let listRightColumn = document.createElement("div");
+  //      AUTHOR TITLE CREATED
+  let titleType = document.createElement("div");
+  let authorType = document.createElement("div");
+  let titleTxt = document.createElement("div");
+  let titleContent = document.createElement("div");
+  let authorTxt = document.createElement("div");
+  let authorContent = document.createElement("div");
+  // GENRES     CREATED
+  let genresContext = document.createElement("div");
+  let genresTxt = document.createElement("div");
+  let genresContent = document.createElement("div");
+  //  RATING        CREATED
+  let ratingContext = document.createElement("div");
+  let ratingTxt = document.createElement("div");
+  let ratingContent = document.createElement("div");
+
+  // CLASSLIST ADD
+
+  list.classList.add("list");
+  divList.classList.add("divList");
+  listLeftColumn.classList.add("listLeftColumn");
+  listCenterColumn.classList.add("listCenterColumn");
+  listRightColumn.classList.add("listRightColumn");
+  //  CLASSLIST ADD CENTER COLUMN
+
+  genresContent.classList.add("genresContent");
+  genresTxt.classList.add("genresTxt");
+  //  CLASSLIST ADD RIGHT COLUMN
+  ratingContent.classList.add("ratingContent");
+  ratingTxt.classList.add("ratingTxt");
+  //  CLASSLIST ADD LEFT COLUMN
   //
 
-  let authorContent = document.createTextNode("Autor: ");
-  let titleContent = document.createTextNode("Tytuł: ");
-  let genresContent = document.createTextNode("Gatunki: ");
-  let ratingContent = document.createTextNode("Ocena: ");
   //
-  newAuthor.appendChild(authorContent);
-  newTitle.appendChild(titleContent);
-  newGenres.appendChild(genresContent);
-  newRating.appendChild(ratingContent);
+  titleTxt.classList.add("titleTxt");
+  titleContent.classList.add("titleContent");
+  authorTxt.classList.add("authorTxt");
+  authorContent.classList.add("authorContent");
   //
-
-  //
-  let newDivCont1 = document.createElement("div");
-  let newDivCont2 = document.createElement("div");
-  let newDivCont3 = document.createElement("div");
-  let newDivCont4 = document.createElement("div");
-  let newDivCont5 = document.createElement("div");
-  //
-  let contentTitle = document.createTextNode(title);
-  let contentAuthor = document.createTextNode(author);
-  let contentGenres = document.createTextNode(genres);
-  let contentRating = document.createTextNode(rating);
+  titleType.classList.add("titleType");
+  authorType.classList.add("authorType");
+  // CREATETEXTNODE
+  genresTxt = document.createTextNode("Gatunki: ");
+  titleTxt = document.createTextNode("Tytuł: ");
+  ratingTxt = document.createTextNode("Ocena: ");
+  authorTxt = document.createTextNode("Autor: ");
+  //CREATETEXTNODE
+  titleContent = document.createTextNode(title);
+  genresContent = document.createTextNode(genres);
+  ratingContent = document.createTextNode(rating);
+  authorContent = document.createTextNode(author);
   //
 
+  //    LIST  APPENDCHILD
+  el.appendChild(list);
+  list.appendChild(divList);
+  divList.appendChild(listLeftColumn);
+  divList.appendChild(listCenterColumn);
+  divList.appendChild(listRightColumn);
+  //  Columns APPENDCHILD
+  listLeftColumn.appendChild(titleType);
+  listLeftColumn.appendChild(authorType);
+  listCenterColumn.appendChild(genresContext);
+  listRightColumn.appendChild(ratingContext);
+  //  AUTHOR TITLE    APPENDCHILD
+  titleType.appendChild(titleTxt);
+  titleType.appendChild(titleContent);
+  authorType.appendChild(authorTxt);
+  authorType.appendChild(authorContent);
+  //  GENRES  APPENDCHILD
+  genresContext.appendChild(genresTxt);
+  genresContext.appendChild(genresContent);
+  //  RATING  APPENDCHILD
+  ratingContext.appendChild(ratingTxt);
+  ratingContext.appendChild(ratingContent);
   //
-  newDivCont1.classList.add("container");
-  newDivCont2.classList.add("positionAuthor");
-  newDivCont3.classList.add("positionGenres");
-  newDivCont4.classList.add("positionRating");
-  newDivCont5.classList.add("positionTitle");
-  //
-  newDivCont1.appendChild(newAuthor);
-  newDivCont1.appendChild(newTitle);
-  newDivCont1.appendChild(newGenres);
-  newDivCont1.appendChild(newRating);
-  //
-  newDivCont5.appendChild(contentTitle);
-  newDivCont4.appendChild(contentRating);
-  newDivCont3.appendChild(contentGenres);
-  newDivCont2.appendChild(contentAuthor);
-  //
-  newDivCont1.appendChild(newDivCont5);
-  newDivCont1.appendChild(newDivCont3);
-  newDivCont1.appendChild(newDivCont4);
-  newDivCont1.appendChild(newDivCont2);
-  //
-  el.appendChild(newDivCont1);
 };
 for (let i = 0; i < movies.length; i++) {
   addContent(
@@ -129,31 +140,3 @@ for (let i = 0; i < movies.length; i++) {
     movies[i].rating
   );
 }
-// addContent(
-//   containerAll,
-//   movies1Title,
-//   movies1Author,
-//   movies1Genres,
-//   movies1Rating
-// );
-// addContent(
-//   containerAll2,
-//   movies2Title,
-//   movies2Author,
-//   movies2Genres,
-//   movies2Rating
-// );
-// addContent(
-//   containerAll3,
-//   movies3Title,
-//   movies3Author,
-//   movies3Genres,
-//   movies3Rating
-// );
-// addContent(
-//   containerAll4,
-//   movies4Title,
-//   movies4Author,
-//   movies4Genres,
-//   movies4Rating
-// );

@@ -1,218 +1,110 @@
 body {
   box-sizing: border-box;
-  width: 100vw;
-  /* height: 100vh; */
   margin: 0;
   padding: 0;
-  position: relative;
-  font-size: smaller;
   font-family: sans-serif;
 }
 .containerAll {
   display: grid;
   gap: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1000px;
+  max-width: 960px;
+  margin: 0 auto;
 }
-.container {
-  border-radius: 10px;
-  /* width: 1000px; */
-  height: 70px;
-  border: 3px solid black;
-  margin: 5px;
+.searchMoviesTxt {
+  font-weight: bold;
   padding: 10px;
+  margin-right: auto;
+}
+.list {
+  display: grid;
+  gap: 1rem;
+  margin: 0 10px;
+}
+.divList {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 16px;
 }
-
-.pText {
-  font-weight: bold;
-  width: 200px;
-  height: 35px;
-  margin-bottom: 5px;
-  padding: 5px;
+.listLeftColumn {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
-
-.positionGenres {
-  order: 8;
-  flex-basis: 50%;
+.listCenterColumn {
+  width: 45%;
+  margin-left: 5%;
+  display: flex;
+  justify-content: left;
+  align-items: end;
 }
-.positionGenresType {
-  order: 7;
-  flex-basis: 7.5%;
-  text-align: right;
-  margin-right: 0.5%;
-  /* margin: 0;
-  padding: 0; */
+.listRightColumn {
+  width: 25%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }
-.positionRating {
-  order: 4;
-  flex-basis: 10%;
-}
-.positionRatingType {
-  order: 3;
-  text-align: right;
-  /* margin: 0;
-  padding: 0; */
-  flex-basis: 89.5%;
-  margin-right: 0.5%;
-}
-
-.positionAuthor {
-  order: 6;
-  text-align: left;
-  flex-basis: 15%;
-}
-.positionAuthorType {
-  order: 5;
-  flex-basis: 9.5%;
-  text-align: right;
-  margin-right: 0.5%;
-  /* margin: 0; */
-}
-.positionTitle {
-  order: 2;
-  flex-basis: 90%;
+.titleType {
+  margin-bottom: 10px;
+  margin-right: 8px;
   font-weight: bold;
 }
-.positionTitleType {
-  order: 1;
-  text-align: right;
-  flex-basis: 9.5%;
-  margin-right: 0.5%;
-  font-weight: bold;
-  /* margin: 0;
-  padding: 0; */
-}
-@media only screen and (max-width: 1440px) {
-}
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 639px) {
   .containerAll {
-    width: 700px;
+    display: grid;
+    gap: 1rem;
+    grid-auto-columns: 1fr;
+    margin: 0 auto;
   }
-  .positionFirst {
-    width: 600px;
-    height: 50px;
+  .list {
+    display: grid;
+    gap: 1rem;
+    height: 300px;
+    margin: 0 20px;
   }
-  .pText {
-    width: 200px;
-    height: 40px;
-    margin: 0;
+  .searchMoviesTxt {
+    display: grid;
+    gap: 1rem;
+    margin: 0 20px;
+    padding: 0px;
   }
-  .positionGenres {
-    flex-basis: 48%;
-    /* flex-grow: 0;
-    flex-shrink: 0; */
+  .divList {
+    display: grid;
+    /* gap: 16px; */
+    grid-auto-columns: 1fr;
   }
-  .positionGenresType {
-    flex-basis: 10%;
-    /* flex-grow: 0;
-    flex-shrink: 0; */
-  }
-  .positionAuthor {
-    flex-basis: 30%;
-    /* flex-grow: 0;
-    flex-shrink: 0; */
-  }
-  .positionAuthorType {
-    flex-basis: 10%;
-    /* flex-grow: 0;
-    flex-shrink: 0; */
-  }
-}
-@media only screen and (max-width: 768px) {
-  /* .positionFirst {
-    width: 600px;
-    height: 50px;
-  } */
-
-  .pText {
-    width: 200px;
-    height: 40px;
-  }
-  .containerAll {
-    width: 600px;
-    height: 50px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .container {
-    width: 500px;
-    height: 140px;
-  }
-  .container * {
-    height: 30px;
-  }
-  /* .container {
-    left: 135%;
-    top: 105%;
-  } */
-  .positionGenres {
-    flex-basis: 87.5%;
-    order: 6;
-    /* flex-grow: 0;
-    flex-shrink: 0; */
-    align-self: center;
-  }
-  .positionGenresType {
-    flex-basis: 10%;
-    order: 5;
-    margin-left: 2.5%;
-    /* flex-grow: 0;
-    flex-shrink: 0; */
-    align-self: center;
-  }
-  .positionAuthor {
-    flex-basis: 90%;
-    /* flex-grow: 0;
-    flex-shrink: 0; */
-    order: 4;
-    align-self: center;
-  }
-  .positionAuthorType {
-    flex-basis: 10%;
-    order: 3;
-    /* flex-grow: 0;
-    flex-shrink: 0; */
-    text-align: right;
-    align-self: center;
-  }
-
-  .positionRatingType {
-    order: 7;
-    flex-basis: 90%;
-    height: 80px;
-    /* background-color: aqua; */
-    /* text-align: right; */
-    /* align-self: flex-end; */
+  .listLeftColumn {
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: right;
+    justify-content: flex-start;
+    align-items: left;
+    flex-direction: column;
   }
-  .positionRating {
-    order: 8;
-    height: 80px;
-    /* align-self: flex-end; */
-    flex-basis: 10%;
+  .listCenterColumn {
+    margin-left: 0%;
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-items: center;
     justify-content: left;
+    align-items: start;
+    margin-bottom: 70px;
   }
-  .positionTitle {
-    order: 2;
-    align-self: center;
-    flex-basis: 90%;
+  .listRightColumn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
   }
-  .positionTitleType {
-    order: 1;
-    text-align: right;
-    align-self: center;
-    flex-basis: 10%;
-    background-color: transparent;
-    /* margin: 0;
-    padding: 0; */
+  .titleType {
+    align-self: flex-start;
+    margin-bottom: 30px;
+  }
+  .authorType {
+    align-self: flex-start;
   }
 }
-/* ///////////////// */
