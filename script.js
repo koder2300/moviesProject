@@ -46,7 +46,7 @@ const movies = [
 
 const containerAll = document.querySelector(".containerAll");
 //
-const addContent = (el, title, author, genres, rating) => {
+const renderMoviesListItem = (el, title, author, genres, rating) => {
   //
   //  LIST CREATED ELEMENT
   let list = document.createElement("div");
@@ -132,7 +132,7 @@ const addContent = (el, title, author, genres, rating) => {
   //
 };
 for (let i = 0; i < movies.length; i++) {
-  addContent(
+  renderMoviesListItem(
     containerAll,
     movies[i].title,
     movies[i].author,
