@@ -140,3 +140,16 @@ for (let i = 0; i < movies.length; i++) {
     movies[i].rating
   );
 }
+
+const getAvailableAuthors = (movies) => {
+  movies.forEach((element) => {
+    console.log(element.author);
+    console.log(element.title);
+    console.log(element.genres);
+    console.log(element.rating);
+  });
+  // for (let i = 0; i < movies.length; i++) {
+  //   console.log(movies[i].author);
+  // }
+};
+getAvailableAuthors(movies);
