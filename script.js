@@ -142,14 +142,45 @@ for (let i = 0; i < movies.length; i++) {
 }
 
 const getAvailableAuthors = (movies) => {
+  let elAuthors = [];
   movies.forEach((element) => {
-    console.log(element.author);
-    console.log(element.title);
-    console.log(element.genres);
-    console.log(element.rating);
+    // console.log(element.author);
+    elAuthors.push(element.author);
+    return elAuthors;
   });
-  // for (let i = 0; i < movies.length; i++) {
-  //   console.log(movies[i].author);
-  // }
+  return elAuthors;
 };
 getAvailableAuthors(movies);
+
+const getAvailableTitles = (movies) => {
+  let elTitles = [];
+  movies.forEach((element) => {
+    elTitles.push(element.title);
+    return elTitles;
+  });
+  return elTitles;
+};
+getAvailableTitles(movies);
+
+const getAvailableGenres = (movies) => {
+  let elGenres = [];
+  let flatArrayGenres = [];
+  movies.forEach((element) => {
+    elGenres.push(element.genres);
+    flatArrayGenres = [].concat(...elGenres);
+    return flatArrayGenres;
+  });
+
+  return flatArrayGenres;
+};
+getAvailableGenres(movies);
+
+const getAvailableRatings = (movies) => {
+  let elRatings = [];
+  movies.forEach((element) => {
+    elRatings.push(element.rating);
+    return elRatings;
+  });
+  return elRatings;
+};
+getAvailableRatings(movies);
