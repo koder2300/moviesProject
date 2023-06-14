@@ -3,9 +3,10 @@ const renderInp = () => {
   chooseInput.setAttribute("id", "idInput");
   chooseInput.setAttribute("placeholder", "Choose movie");
   chooseInput.type = "text";
-  containerAll.before(chooseInput);
+  searchMoviesDiv.appendChild(chooseInput);
   let val = document.getElementById("idInput").value;
   console.log(val);
+  document.getElementById("idInput").style.width = "30%";
 };
 renderInp();
 idInput.addEventListener("change", function () {
@@ -14,7 +15,7 @@ idInput.addEventListener("change", function () {
   let arr = [];
   arr.push(val);
   movies.forEach((el) => {
-    console.log(typeof el.author);
+    console.log(el.author);
   });
   if (arr.includes()) console.log(arr);
 });
