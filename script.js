@@ -144,7 +144,6 @@ for (let i = 0; i < movies.length; i++) {
 const getAvailableAuthors = (movies) => {
   let elAuthors = [];
   movies.forEach((element) => {
-    // console.log(element.author);
     elAuthors.push(element.author);
     return elAuthors;
   });

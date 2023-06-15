@@ -55,6 +55,8 @@ body {
 #idInput {
   margin-top: 20px;
   margin-left: 10px;
+  /* display: grid;
+  gap: 1rem; */
 }
 @media only screen and (max-width: 639px) {
   .containerAll {

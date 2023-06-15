@@ -61,9 +61,12 @@ const uniqueGenres = (moviesArrays) => {
 let searchMoviesDiv = document.querySelector(".searchMoviesTxt");
 const renderInputItems = (array, idItem) => {
   const selectAdd = document.createElement("select");
+  //
   selectAdd.setAttribute("id", idItem);
-
+  // const selectDiv = document.createElement("div");
+  // selectDiv.appendChild(selectAdd);
   searchMoviesDiv.appendChild(selectAdd);
+  // searchMoviesDiv.appendChild(selectDiv);
   let arraysMovies = array;
 
   for (let i = 0; i < arraysMovies.length; i++) {
@@ -88,17 +91,9 @@ let selectRat = document.querySelector("#selectRating");
 
 //    ZADANIE 4
 document.querySelector("#selectAuthor").addEventListener("change", function () {
-  for (let i = 0; i < moviesArray.length; i++) {
-    selectTit[0].textContent = moviesArray[i].title;
-    selectGen[0].textContent = moviesArray[i].genres;
-    selectRat[0].textContent = moviesArray[i].rating;
-  }
-  //   //
-  //   // selectTit[0].textContent = movies[i].title;
-  //   // selectGen[0].textContent = movies[i].genres;
-  //   // selectRat[0].textContent = movies[i].rating;
+  // for (let i = 0; i < moviesArray.length; i++) {
+  //   selectTit[0].textContent = moviesArray[i].title;
+  //   selectGen[0].textContent = moviesArray[i].genres;
+  //   selectRat[0].textContent = moviesArray[i].rating;
+  // }
 });
-
-//  jesli wybiore selectAut i tam movies np.[1] to w reszcie select ma być movies [1] event change .pierw zrobić dla jednego
-
-//pytanie jeśli nie mam duplikatów w żadnej z tablic, tzn. autor,tytuł,gatunek oraz rating to z kąd powiązanie między nimi .Albo inaczej
