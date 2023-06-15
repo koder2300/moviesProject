@@ -79,9 +79,9 @@ const renderInputItems = (array, idItem) => {
 };
 //
 renderInputItems(uniqueAuthors(moviesArray), "selectAuthor");
-renderInputItems(uniqueTitles(moviesArray), "selectTitle");
+// renderInputItems(getAvailableTitles(moviesArray), "selectTitle");
 renderInputItems(uniqueGenres(moviesArray), "selectGenres");
-renderInputItems(uniqueRating(moviesArray), "selectRating");
+// renderInputItems(getAvailableRatings(moviesArray), "selectRating");
 //
 let selectAut = document.querySelector("#selectAuthor");
 let selectTit = document.querySelector("#selectTitle");
@@ -90,10 +90,19 @@ let selectRat = document.querySelector("#selectRating");
 //
 
 //    ZADANIE 4
-document.querySelector("#selectAuthor").addEventListener("change", function () {
-  // for (let i = 0; i < moviesArray.length; i++) {
-  //   selectTit[0].textContent = moviesArray[i].title;
-  //   selectGen[0].textContent = moviesArray[i].genres;
-  //   selectRat[0].textContent = moviesArray[i].rating;
-  // }
-});
+// document.querySelector("#selectAuthor").addEventListener("change", function () {
+//   for (let i = 0; i < moviesArray.length; i++) {
+//     // selectTit[0].textContent = moviesArray[i].title;
+//     // selectGen[0].textContent = moviesArray[i].genres;
+//     // selectRat[0].textContent = moviesArray[i].rating;
+//     console.log(moviesArray[i].author);
+//     console.log(moviesArray.length);
+//     if (moviesArray.author.includes("author 11")) {
+//       console.log(`ok`);
+//     } else {
+//       `no`;
+//     }
+//   }
+// });
+
+//
