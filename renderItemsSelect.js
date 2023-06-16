@@ -11,7 +11,7 @@ moviesArray.forEach((e) => {
     document.body.querySelector("#container2").appendChild(t);
 });
 //
-let changeTitles = (e) => {
+let changeAuthor = (e) => {
   e.target.value
     ? ((document.body.querySelector("#container2").innerHTML = ""),
       moviesArray.forEach((el) => {
@@ -30,6 +30,7 @@ let changeTitles = (e) => {
 
 //
 let changeGenres = (e) => {
+  console.log(`klik`);
   e.target.value
     ? ((document.body.querySelector("#container2").innerHTML = ""),
       moviesArray.forEach((el) => {
@@ -39,21 +40,18 @@ let changeGenres = (e) => {
             document.body.querySelector("#container2").appendChild(createdElm);
         }
       }))
-    : moviesArray.forEach((el) => {
+    : moviesArray((el) => {
         let createdElement = document.createElement("div");
         (createdElement.innerHTML = `autor : ${el.author}, gatunek :${el.genres}`),
-          document.body
-            .querySelector("#container2")
-            .appendChild(createdElement);
+          document.body.querySelector("#container").appendChild(createdElement);
       });
 };
 
-//
-// changeGenres();
+// // changeGenres();
 // document
 //   .querySelector("#selectGenres")
 //   .addEventListener("change", changeGenres);
 
 document
   .querySelector("#selectAuthor")
-  .addEventListener("change", changeTitles);
+  .addEventListener("change", changeAuthor);

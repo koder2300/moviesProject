@@ -58,6 +58,9 @@ body {
   /* display: grid;
   gap: 1rem; */
 }
+.elAuthorDiv {
+  width: 100%;
+}
 @media only screen and (max-width: 639px) {
   .containerAll {
     display: grid;
