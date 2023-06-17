@@ -131,15 +131,16 @@ const renderMoviesListItem = (el, title, author, genres, rating) => {
   ratingContext.appendChild(ratingContent);
   //
 };
-for (let i = 0; i < movies.length; i++) {
-  renderMoviesListItem(
-    containerAll,
-    movies[i].title,
-    movies[i].author,
-    movies[i].genres,
-    movies[i].rating
-  );
-}
+//  POPRAWNY
+// for (let i = 0; i < movies.length; i++) {
+//   renderMoviesListItem(
+//     containerAll,
+//     movies[i].title,
+//     movies[i].author,
+//     movies[i].genres,
+//     movies[i].rating
+//   );
+// }
 
 const getAvailableAuthors = (movies) => {
   let elAuthors = [];
