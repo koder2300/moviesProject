@@ -92,12 +92,12 @@ let selectTit = document.querySelector("#selectTitle");
 let selectGen = document.querySelector("#selectGenres");
 let selectRat = document.querySelector("#selectRating");
 
-for (let i = 0; i < moviesArray.length; i++) {
-  renderMoviesListItem(
-    containerAll,
-    moviesArray[i].title,
-    moviesArray[i].author,
-    moviesArray[i].genres,
-    moviesArray[i].rating
-  );
-}
+// for (let i = 0; i < moviesArray.length; i++) {
+//   renderMoviesListItem(
+//     containerAll,
+//     moviesArray[i].title,
+//     moviesArray[i].author,
+//     moviesArray[i].genres,
+//     moviesArray[i].rating
+//   );
+// }
