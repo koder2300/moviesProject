@@ -27,32 +27,53 @@ renderInpCreated();
 //     });
 //   }
 // });
+// INPUT POPRAWNY PRÓBA 3
+//
+
+// idInput.addEventListener("input", function () {
+//   let val = document.getElementById("idInput").value;
+//   //
+
+//   let searchGenres = "";
+//   for (let i = 0; i < moviesArray.length; i++) {
+//     let moviesArr = moviesArray[i].genres;
+//     moviesArr.forEach((el) => {
+//       if (el.includes(val)) {
+//         // console.log(el);
+//         searchGenres += `<div class="elAuthorDiv"> Gatunek :${moviesArr}</div>`;
+//         // searchGenres = `${moviesArr}`;
+//         // document.querySelector("#container2").innerHTML = searchGenres;
+//         document.querySelector("#container2").innerHTML = searchGenres;
+//       }
+//     });
+//   }
+// });
+//
+let divListed = document.querySelector(`.titleType`);
 
 //  INPUT POPRAWNY PRÓBA 2
 idInput.addEventListener("input", function () {
   let val = document.getElementById("idInput").value;
-  let searchGenres;
-  // let inpGenres = document.querySelectorAll(".listCenterColumn");
-  //
-  for (let i = 0; i < moviesArray.length; i++) {
-    let moviesArr = moviesArray[i].genres;
 
-    moviesArr.forEach((el) => {
-      if (el.includes(val)) {
-        searchGenres = `${moviesArr}`;
-        renderMoviesListItem(
-          containerAll,
-          moviesArray[i].title,
-          moviesArray[i].author,
-          searchGenres,
-          moviesArray[i].rating
-        );
-      }
-    });
+  //
+  // divListed.textContent = "";
+  for (let i = 0; i < moviesArray.length; i++) {
+    let moviesArr = moviesArray[i].title;
+    console.log(typeof moviesArr);
+    if (moviesArr.includes(val)) {
+      console.log(moviesArr);
+      renderMoviesListItem(
+        containerAll,
+        moviesArr,
+        moviesArray[i].author,
+        moviesArray[i].genres,
+        moviesArray[i].rating
+      );
+    }
   }
 });
 //Przyrodniczy
 // Polski
 // Komedia
-//Historyczny
-//Horror Thriller
+//Tytuł 71
+//Tytuł 44
