@@ -27,36 +27,13 @@ renderInpCreated();
 //     });
 //   }
 // });
-// INPUT POPRAWNY PRÓBA 3
-//
-
-// idInput.addEventListener("input", function () {
-//   let val = document.getElementById("idInput").value;
-//   //
-
-//   let searchGenres = "";
-//   for (let i = 0; i < moviesArray.length; i++) {
-//     let moviesArr = moviesArray[i].genres;
-//     moviesArr.forEach((el) => {
-//       if (el.includes(val)) {
-//         // console.log(el);
-//         searchGenres += `<div class="elAuthorDiv"> Gatunek :${moviesArr}</div>`;
-//         // searchGenres = `${moviesArr}`;
-//         // document.querySelector("#container2").innerHTML = searchGenres;
-//         document.querySelector("#container2").innerHTML = searchGenres;
-//       }
-//     });
-//   }
-// });
 //
 let divListed = document.querySelector(`.titleType`);
 
 //  INPUT POPRAWNY PRÓBA 2
-idInput.addEventListener("input", function () {
-  let val = document.getElementById("idInput").value;
-
+idInput.addEventListener("input", function (event) {
+  let val = event.target.value;
   //
-  // divListed.textContent = "";
   for (let i = 0; i < moviesArray.length; i++) {
     let moviesArr = moviesArray[i].title;
     console.log(typeof moviesArr);

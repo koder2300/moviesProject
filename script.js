@@ -90,12 +90,12 @@ const renderMoviesListItem = (el, title, author, genres, rating) => {
   //
 };
 
-for (let i = 0; i < moviesArray.length; i++) {
-  renderMoviesListItem(
-    containerAll,
-    moviesArray[i].title,
-    moviesArray[i].author,
-    moviesArray[i].genres,
-    moviesArray[i].rating
-  );
-}
+// for (let i = 0; i < moviesArray.length; i++) {
+//   renderMoviesListItem(
+//     containerAll,
+//     moviesArray[i].title,
+//     moviesArray[i].author,
+//     moviesArray[i].genres,
+//     moviesArray[i].rating
+//   );
+// }
