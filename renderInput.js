@@ -1,12 +1,9 @@
-// export let searchGenres;
 const renderInpCreated = () => {
   const chooseInput = document.createElement("input");
   chooseInput.setAttribute("id", "idInput");
   chooseInput.setAttribute("placeholder", "Choose movie");
   chooseInput.type = "text";
   searchMoviesDiv.appendChild(chooseInput);
-  let val = document.getElementById("idInput").value;
-
   document.getElementById("idInput").style.width = "30%";
 };
 renderInpCreated();
@@ -49,8 +46,3 @@ idInput.addEventListener("input", function (event) {
     }
   }
 });
-//Przyrodniczy
-// Polski
-// Komedia
-//Tytuł 71
-//Tytuł 44
