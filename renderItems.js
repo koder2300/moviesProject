@@ -1,57 +1,45 @@
 const getAvailableAuthors = (moviesArrays) => {
   let uniqueChars = [];
-  let uniqueCharsArray = [];
-  for (let i = 0; i < moviesArrays.length; i++) {
-    uniqueChars.push(moviesArrays[i].author);
-
-    uniqueCharsArray = uniqueChars.filter((c, index) => {
-      return uniqueChars.indexOf(c) === index;
-    });
-  }
-  return uniqueCharsArray;
+  moviesArrays.forEach((el) => {
+    if (!uniqueChars.includes(el.author)) {
+      return uniqueChars.push(el.author);
+    }
+  });
+  return uniqueChars;
 };
-//
+getAvailableAuthors(moviesArray);
+
 const getAvailableTitles = (moviesArrays) => {
   let uniqueChars = [];
-  let uniqueCharsArray = [];
-  for (let i = 0; i < moviesArrays.length; i++) {
-    uniqueChars.push(moviesArrays[i].title);
-
-    uniqueCharsArray = uniqueChars.filter((c, index) => {
-      return uniqueChars.indexOf(c) === index;
-    });
-  }
-  return uniqueCharsArray;
+  moviesArrays.forEach((el) => {
+    if (!uniqueChars.includes(el.title)) {
+      return uniqueChars.push(el.title);
+    }
+  });
+  return uniqueChars;
 };
 getAvailableTitles(moviesArray);
 //
 const getAvailableRatings = (moviesArrays) => {
   let uniqueChars = [];
-  let uniqueCharsArray = [];
-  for (let i = 0; i < moviesArrays.length; i++) {
-    uniqueChars.push(moviesArrays[i].rating);
-
-    uniqueCharsArray = uniqueChars.filter((c, index) => {
-      return uniqueChars.indexOf(c) === index;
-    });
-  }
-  return uniqueCharsArray;
+  moviesArrays.forEach((el) => {
+    if (!uniqueChars.includes(el.rating)) {
+      return uniqueChars.push(el.rating);
+    }
+  });
+  return uniqueChars;
 };
 //
 const getAvailableGenres = (moviesArrays) => {
   let uniqueChars = [];
-  let uniqueCharsArray = [];
-  let uniqueCharacter = [];
-  for (let i = 0; i < moviesArrays.length; i++) {
-    uniqueChars.push(moviesArrays[i].genres);
-    uniqueCharacter = uniqueChars.flat();
-    //
-    uniqueCharsArray = uniqueCharacter.filter((c, index) => {
-      return uniqueCharacter.indexOf(c) === index;
-    });
-  }
-  return uniqueCharsArray;
+  moviesArrays.forEach((el) => {
+    if (!uniqueChars.includes(el.genres)) {
+      return uniqueChars.push(el.genres);
+    }
+  });
+  return uniqueChars;
 };
+getAvailableGenres(moviesArray);
 //
 let searchMoviesDiv = document.querySelector(".searchMoviesTxt");
 const renderInputItems = (array, idItem) => {

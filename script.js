@@ -4,9 +4,11 @@ const moviesArray = JSON.parse(
 
 const containerAll = document.querySelector(".containerAll");
 //
+
 const renderMoviesListItem = (el, title, author, genres, rating) => {
   //
-  //  LIST CREATED ELEMENT
+
+  //  LIST CREATED
   let list = document.createElement("div");
   let divList = document.createElement("div");
   let listLeftColumn = document.createElement("div");
@@ -44,8 +46,6 @@ const renderMoviesListItem = (el, title, author, genres, rating) => {
   ratingTxt.classList.add("ratingTxt");
   //  CLASSLIST ADD LEFT COLUMN
   //
-
-  //
   titleTxt.classList.add("titleTxt");
   titleContent.classList.add("titleContent");
   authorTxt.classList.add("authorTxt");
@@ -66,7 +66,9 @@ const renderMoviesListItem = (el, title, author, genres, rating) => {
   //
 
   //    LIST  APPENDCHILD
+
   el.appendChild(list);
+
   list.appendChild(divList);
   divList.appendChild(listLeftColumn);
   divList.appendChild(listCenterColumn);
@@ -88,14 +90,15 @@ const renderMoviesListItem = (el, title, author, genres, rating) => {
   ratingContext.appendChild(ratingTxt);
   ratingContext.appendChild(ratingContent);
   //
+  //
 };
 
-// for (let i = 0; i < moviesArray.length; i++) {
-//   renderMoviesListItem(
-//     containerAll,
-//     moviesArray[i].title,
-//     moviesArray[i].author,
-//     moviesArray[i].genres,
-//     moviesArray[i].rating
-//   );
-// }
+for (let i = 0; i < moviesArray.length; i++) {
+  renderMoviesListItem(
+    containerAll,
+    moviesArray[i].title,
+    moviesArray[i].author,
+    moviesArray[i].genres,
+    moviesArray[i].rating
+  );
+}

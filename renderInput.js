@@ -7,33 +7,21 @@ const renderInpCreated = () => {
   document.getElementById("idInput").style.width = "30%";
 };
 renderInpCreated();
-///////////   INPUT  POPRAWNE W ID CONTAINER
-
-// idInput.addEventListener("input", function () {
-//   let val = document.getElementById("idInput").value;
-//   //
-//   let searchGenres = "";
-//   for (let i = 0; i < moviesArray.length; i++) {
-//     let moviesArr = moviesArray[i].genres;
-//     moviesArr.forEach((el) => {
-//       if (el.includes(val)) {
-//         // console.log(el);
-//         searchGenres += `<div class="elAuthorDiv"> Gatunek :${moviesArr}</div>`;
-//         document.querySelector("#container2").innerHTML = searchGenres;
-//       }
-//     });
-//   }
-// });
-//
+///////////   INPUT  POPRAWNE
 let divListed = document.querySelector(`.titleType`);
-
-//  INPUT POPRAWNY PRÓBA 2
+let divListSec = document.querySelector(".divList");
+//  INPUT POPRAWNY
 idInput.addEventListener("input", function (event) {
   let val = event.target.value;
   //
+  let divListThird = document.querySelectorAll(".list");
+  divListThird.forEach((el) => {
+    // el.innerHTML = "";
+    el.parentNode.removeChild(el);
+  });
   for (let i = 0; i < moviesArray.length; i++) {
     let moviesArr = moviesArray[i].title;
-    console.log(typeof moviesArr);
+
     if (moviesArr.includes(val)) {
       console.log(moviesArr);
       renderMoviesListItem(

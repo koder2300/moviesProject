@@ -1,4 +1,9 @@
 let changeAuthor = (e) => {
+  let divListThird = document.querySelectorAll(".list");
+  divListThird.forEach((el) => {
+    // el.innerHTML = "";
+    el.parentNode.removeChild(el);
+  });
   moviesArray.forEach((el) => {
     if (el.author === e.target.value) {
       renderMoviesListItem(
@@ -10,30 +15,33 @@ let changeAuthor = (e) => {
       );
     }
   });
-};
-//    GATUNEK   POPRAWNY
+}; //GATUNEK
 let changeGenres = (e) => {
-  console.log(`klik`);
-  e.target.value
-    ? ((document.body.querySelector("#container2").innerHTML = ""),
-      moviesArray.forEach((el) => {
-        el.genres.forEach((element) => {
-          if (element.includes(e.target.value)) {
-            let createdElm = document.createElement("div");
-            (createdElm.innerHTML = `autor : ${el.author}, gatunek: ${element}`),
-              document.body
-                .querySelector("#container2")
-                .appendChild(createdElm);
-          }
-        });
-      }))
-    : moviesArray((el) => {
-        let createdElement = document.createElement("div");
-        (createdElement.innerHTML = `autor : ${el.author}, gatunek :${el.genres}`),
-          document.body.querySelector("#container").appendChild(createdElement);
-      });
+  let divListThird = document.querySelectorAll(".list");
+  divListThird.forEach((el) => {
+    // el.innerHTML = "";
+    el.parentNode.removeChild(el);
+  });
+  moviesArray.forEach((el) => {
+    el.genres.forEach((elm) => {
+      // console.log(elm);
+      let flat = e.target.value;
+      if (flat.includes(elm)) {
+        console.log(elm);
+      }
+      // console.log(e.target.value);
+      if (elm === e.target.value) {
+        renderMoviesListItem(
+          containerAll,
+          el.title,
+          el.author,
+          el.genres,
+          el.rating
+        );
+      }
+    });
+  });
 };
-
 moviesArray;
 document
   .querySelector("#selectGenres")
