@@ -62,6 +62,9 @@ renderInputItems(getAvailableAuthors(moviesArray), "selectAuthor");
 renderInputItems(getAvailableGenres(moviesArray), "selectGenres");
 // renderInputItems(getAvailableRatings(moviesArray), "selectRating");
 //
+//    SORT SELECT
+renderInputItems(sortArray, "selectSorted");
+//
 let selectAut = document.querySelector("#selectAuthor");
 let selectTit = document.querySelector("#selectTitle");
 let selectGen = document.querySelector("#selectGenres");
