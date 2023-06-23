@@ -1,11 +1,36 @@
+function sortN(a, b) {
+  if (a.rating < b.rating) {
+    return 1;
+  }
+  if (a.rating > b.rating) {
+    return -1;
+  }
+}
+
 const getAvailableAuthors = (moviesArrays) => {
   let uniqueChars = [];
+  let uniqueArr = [];
   moviesArrays.forEach((el) => {
     if (!uniqueChars.includes(el.author)) {
       return uniqueChars.push(el.author);
     }
   });
-  return uniqueChars;
+
+  uniqueChars.forEach((elm) => {
+    // console.log(elm);
+    let elArr = elm;
+    uniqueArr.push(elArr);
+    uniqueArr.sort(function (a, b) {
+      return a.localeCompare(b, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      });
+    });
+    return uniqueArr;
+  });
+  uniqueArr.unshift("Wybierz");
+
+  return uniqueArr;
 };
 getAvailableAuthors(moviesArray);
 
@@ -32,12 +57,27 @@ const getAvailableRatings = (moviesArrays) => {
 //
 const getAvailableGenres = (moviesArrays) => {
   let uniqueChars = [];
+  let uniqueArr = [];
   moviesArrays.forEach((el) => {
-    if (!uniqueChars.includes(el.genres)) {
-      return uniqueChars.push(el.genres);
+    if (!uniqueChars.includes(el.genres[0])) {
+      return uniqueChars.push(el.genres[0]);
     }
   });
-  return uniqueChars;
+
+  uniqueChars.forEach((elm) => {
+    let elArr = elm;
+    uniqueArr.push(elArr);
+    uniqueArr.sort(function (a, b) {
+      return a.localeCompare(b, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      });
+    });
+    return uniqueArr;
+  });
+  uniqueArr.unshift("Wybierz");
+
+  return uniqueArr;
 };
 getAvailableGenres(moviesArray);
 //

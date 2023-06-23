@@ -1,13 +1,26 @@
 const renderSort = (e) => {
+  let divListThird = document.querySelectorAll(".list");
+  divListThird.forEach((el) => {
+    el.parentNode.removeChild(el);
+  });
   let arrSorted = [];
-
+  let arrSortedEl = [];
+  let arrSort = [];
   //
   function sortN(a, b) {
-    if (a < b) {
+    if (a.rating < b.rating) {
       return 1;
     }
-    if (a > b) {
+    if (a.rating > b.rating) {
       return -1;
+    }
+  }
+  function sortNumb(a, b) {
+    if (a.rating < b.rating) {
+      return -1;
+    }
+    if (a.rating > b.rating) {
+      return 1;
     }
   }
   //
@@ -16,44 +29,84 @@ const renderSort = (e) => {
       console.log(`${el}`);
       if (el === "sortuj alfabetycznie A-Z") {
         moviesArray.forEach((elm) => {
-          let arrAut = elm.author;
-          arrSorted.push(arrAut);
-          arrSorted.sort(function (a, b) {
-            return a.localeCompare(b);
+          //
+          let authorArray = elm;
+          arrSort.push(authorArray);
+          arrSort = arrSort.sort(function (a, b) {
+            return a.title.localeCompare(b.title, undefined, {
+              numeric: true,
+              sensitivity: "base",
+            });
           });
-          return arrSorted;
+
+          return arrSort;
         });
-        console.log(arrSorted);
+        arrSort.forEach((element) => {
+          renderMoviesListItem(
+            containerAll,
+            element.title,
+            element.author,
+            element.genres,
+            element.rating
+          );
+        });
       } else if (el === "sortuj alfabetycznie Z-A") {
         moviesArray.forEach((elm) => {
-          let arrAut = elm.author;
+          let arrAut = elm;
           arrSorted.push(arrAut);
           arrSorted.sort(function (a, b) {
-            return b.localeCompare(a);
+            return b.title.localeCompare(a.title, undefined, {
+              numeric: true,
+              sensitivity: "base",
+            });
           });
+
           return arrSorted;
         });
-        console.log(arrSorted);
+        arrSorted.forEach((element) => {
+          renderMoviesListItem(
+            containerAll,
+            element.title,
+            element.author,
+            element.genres,
+            element.rating
+          );
+        });
       }
       //
       else if (el === "sortuj wg oceny rosnąco") {
         moviesArray.forEach((elm) => {
-          let arrAut = elm.rating;
-          arrSorted.push(arrAut);
-          // console.log(arrSorted);
-          arrSorted.sort();
-          return arrSorted;
+          //
+          let authorTitle = elm;
+          arrSort.push(authorTitle);
+          arrSort = arrSort.sort(sortNumb);
+          return arrSort;
         });
-        console.log(arrSorted);
+        arrSort.forEach((element) => {
+          renderMoviesListItem(
+            containerAll,
+            element.title,
+            element.author,
+            element.genres,
+            element.rating
+          );
+        });
       } else if (el === "sortuj wg oceny malejąco") {
         moviesArray.forEach((elm) => {
-          let arrAut = elm.rating;
-          arrSorted.push(arrAut);
-          // console.log(arrSorted);
-          arrSorted.sort(sortN);
-          return arrSorted;
+          let arrAut = elm;
+          arrSortedEl.push(arrAut);
+          arrSortedEl = arrSortedEl.sort(sortN);
+          return arrSortedEl;
         });
-        console.log(arrSorted);
+        arrSortedEl.forEach((element) => {
+          renderMoviesListItem(
+            containerAll,
+            element.title,
+            element.author,
+            element.genres,
+            element.rating
+          );
+        });
       }
       //
     }

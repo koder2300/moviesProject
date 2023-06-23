@@ -1,9 +1,13 @@
 let changeAuthor = (e) => {
+  let arrSorted = [];
   let divListThird = document.querySelectorAll(".list");
   divListThird.forEach((el) => {
     el.parentNode.removeChild(el);
   });
   moviesArray.forEach((el) => {
+    // console.log(el);
+    let listEl = el;
+    arrSorted.push(listEl);
     if (el.author === e.target.value) {
       renderMoviesListItem(
         containerAll,
