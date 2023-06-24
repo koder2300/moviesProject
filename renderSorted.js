@@ -107,6 +107,17 @@ const renderSort = (e) => {
             element.rating
           );
         });
+      } else if ("Wybierz" === e.target.value) {
+        // console.log(`klik`);
+        moviesArray.forEach((el) => {
+          renderMoviesListItem(
+            containerAll,
+            el.title,
+            el.author,
+            el.genres,
+            el.rating
+          );
+        });
       }
       //
     }

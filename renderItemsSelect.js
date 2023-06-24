@@ -17,6 +17,16 @@ let changeAuthor = (e) => {
         el.rating
       );
     }
+    if ("Wybierz" === e.target.value) {
+      // console.log(`klik`);
+      renderMoviesListItem(
+        containerAll,
+        el.title,
+        el.author,
+        el.genres,
+        el.rating
+      );
+    }
   });
 }; //GATUNEK
 let changeGenres = (e) => {
@@ -28,9 +38,18 @@ let changeGenres = (e) => {
     el.genres.forEach((elm) => {
       let flat = e.target.value;
       if (flat.includes(elm)) {
-        console.log(elm);
       }
       if (elm === e.target.value) {
+        renderMoviesListItem(
+          containerAll,
+          el.title,
+          el.author,
+          el.genres,
+          el.rating
+        );
+      }
+      if ("Wybierz" === e.target.value) {
+        // console.log(`klik`);
         renderMoviesListItem(
           containerAll,
           el.title,

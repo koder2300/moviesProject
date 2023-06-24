@@ -58,10 +58,17 @@ const getAvailableRatings = (moviesArrays) => {
 const getAvailableGenres = (moviesArrays) => {
   let uniqueChars = [];
   let uniqueArr = [];
+  let uniqueCharsArray = [];
   moviesArrays.forEach((el) => {
-    if (!uniqueChars.includes(el.genres[0])) {
-      return uniqueChars.push(el.genres[0]);
-    }
+    let elmGenres = el.genres;
+    elmGenres.forEach((elm) => {
+      if (!uniqueChars.includes(elm)) {
+        //
+        uniqueChars.push(elm);
+        return uniqueChars;
+      }
+    });
+    return uniqueChars;
   });
 
   uniqueChars.forEach((elm) => {
