@@ -1,13 +1,12 @@
 let changeAuthor = (e) => {
-  let arrSorted = [];
-  let divListThird = document.querySelectorAll(".list");
-  divListThird.forEach((el) => {
+  let sortedElements = [];
+  let listElements = document.querySelectorAll(".list");
+  listElements.forEach((el) => {
     el.parentNode.removeChild(el);
   });
   moviesArray.forEach((el) => {
-    // console.log(el);
-    let listEl = el;
-    arrSorted.push(listEl);
+    let listElement = el;
+    sortedElements.push(listElement);
     if (el.author === e.target.value) {
       renderMoviesListItem(
         containerAll,
@@ -18,7 +17,6 @@ let changeAuthor = (e) => {
       );
     }
     if ("Wybierz" === e.target.value) {
-      // console.log(`klik`);
       renderMoviesListItem(
         containerAll,
         el.title,
@@ -30,8 +28,8 @@ let changeAuthor = (e) => {
   });
 }; //GATUNEK
 let changeGenres = (e) => {
-  let divListThird = document.querySelectorAll(".list");
-  divListThird.forEach((el) => {
+  let listElements = document.querySelectorAll(".list");
+  listElements.forEach((el) => {
     el.parentNode.removeChild(el);
   });
   moviesArray.forEach((el) => {
@@ -49,7 +47,6 @@ let changeGenres = (e) => {
         );
       }
       if ("Wybierz" === e.target.value) {
-        // console.log(`klik`);
         renderMoviesListItem(
           containerAll,
           el.title,

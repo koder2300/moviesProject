@@ -1,13 +1,14 @@
 const renderSort = (e) => {
-  let divListThird = document.querySelectorAll(".list");
-  divListThird.forEach((el) => {
+  let listItems = document.querySelectorAll(".list");
+  listItems.forEach((el) => {
     el.parentNode.removeChild(el);
   });
-  let arrSorted = [];
-  let arrSortedEl = [];
-  let arrSort = [];
+  let titleDescending = [];
+  let ratingDescending = [];
+  let titleAscending = [];
+  let ratingAscending = [];
   //
-  function sortN(a, b) {
+  function sortDescending(a, b) {
     if (a.rating < b.rating) {
       return 1;
     }
@@ -15,7 +16,7 @@ const renderSort = (e) => {
       return -1;
     }
   }
-  function sortNumb(a, b) {
+  function sortAscending(a, b) {
     if (a.rating < b.rating) {
       return -1;
     }
@@ -26,22 +27,21 @@ const renderSort = (e) => {
   //
   sortArray.forEach((el) => {
     if (e.target.value === el) {
-      console.log(`${el}`);
       if (el === "sortuj alfabetycznie A-Z") {
         moviesArray.forEach((elm) => {
           //
-          let authorArray = elm;
-          arrSort.push(authorArray);
-          arrSort = arrSort.sort(function (a, b) {
+          let titleElements = elm;
+          titleAscending.push(titleElements);
+          titleAscending = titleAscending.sort(function (a, b) {
             return a.title.localeCompare(b.title, undefined, {
               numeric: true,
               sensitivity: "base",
             });
           });
 
-          return arrSort;
+          return titleAscending;
         });
-        arrSort.forEach((element) => {
+        titleAscending.forEach((element) => {
           renderMoviesListItem(
             containerAll,
             element.title,
@@ -52,18 +52,18 @@ const renderSort = (e) => {
         });
       } else if (el === "sortuj alfabetycznie Z-A") {
         moviesArray.forEach((elm) => {
-          let arrAut = elm;
-          arrSorted.push(arrAut);
-          arrSorted.sort(function (a, b) {
+          let titleElements = elm;
+          titleDescending.push(titleElements);
+          titleDescending.sort(function (a, b) {
             return b.title.localeCompare(a.title, undefined, {
               numeric: true,
               sensitivity: "base",
             });
           });
 
-          return arrSorted;
+          return titleDescending;
         });
-        arrSorted.forEach((element) => {
+        titleDescending.forEach((element) => {
           renderMoviesListItem(
             containerAll,
             element.title,
@@ -77,12 +77,12 @@ const renderSort = (e) => {
       else if (el === "sortuj wg oceny rosnąco") {
         moviesArray.forEach((elm) => {
           //
-          let authorTitle = elm;
-          arrSort.push(authorTitle);
-          arrSort = arrSort.sort(sortNumb);
-          return arrSort;
+          let ratingElements = elm;
+          ratingAscending.push(ratingElements);
+          ratingAscending = ratingAscending.sort(sortAscending);
+          return ratingAscending;
         });
-        arrSort.forEach((element) => {
+        ratingAscending.forEach((element) => {
           renderMoviesListItem(
             containerAll,
             element.title,
@@ -93,12 +93,12 @@ const renderSort = (e) => {
         });
       } else if (el === "sortuj wg oceny malejąco") {
         moviesArray.forEach((elm) => {
-          let arrAut = elm;
-          arrSortedEl.push(arrAut);
-          arrSortedEl = arrSortedEl.sort(sortN);
-          return arrSortedEl;
+          let ratingsElements = elm;
+          ratingDescending.push(ratingsElements);
+          ratingDescending = ratingDescending.sort(sortDescending);
+          return ratingDescending;
         });
-        arrSortedEl.forEach((element) => {
+        ratingDescending.forEach((element) => {
           renderMoviesListItem(
             containerAll,
             element.title,
@@ -108,7 +108,6 @@ const renderSort = (e) => {
           );
         });
       } else if ("Wybierz" === e.target.value) {
-        // console.log(`klik`);
         moviesArray.forEach((el) => {
           renderMoviesListItem(
             containerAll,
