@@ -88,7 +88,6 @@ const getAvailableGenres = (moviesArrays) => {
 };
 getAvailableGenres(moviesArray);
 //
-let searchMoviesDiv = document.querySelector(".searchMoviesTxt");
 const renderInputItems = (array, idItem) => {
   const selectAdd = document.createElement("select");
   //
@@ -103,6 +102,7 @@ const renderInputItems = (array, idItem) => {
     selectAdd.appendChild(el);
   }
 };
+
 //
 renderInputItems(getAvailableAuthors(moviesArray), "selectAuthor");
 // renderInputItems(getAvailableTitles(moviesArray), "selectTitle");

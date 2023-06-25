@@ -1,10 +1,11 @@
+let searchMoviesDiv = document.querySelector(".searchMoviesTxt");
+
 const renderInpCreated = () => {
   const chooseInput = document.createElement("input");
   chooseInput.setAttribute("id", "idInput");
   chooseInput.setAttribute("placeholder", "Choose movie");
   chooseInput.type = "text";
   searchMoviesDiv.appendChild(chooseInput);
-  document.getElementById("idInput").style.width = "30%";
 };
 renderInpCreated();
 ///////////   INPUT  POPRAWNE
