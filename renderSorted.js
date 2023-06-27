@@ -46,7 +46,6 @@ const renderSort = (e) => {
             typeof filteredMovies !== "undefined" &&
             filteredMovies.length > 0
           ) {
-            console.log(`Yes`);
             titleAscending.forEach((element) => {
               renderMoviesListItem(
                 containerAll,
@@ -56,10 +55,9 @@ const renderSort = (e) => {
                 element.rating
               );
             });
-          } else {
-            console.log(`no`);
           }
         }
+        ////////////////////
       } else if (el === "sortuj alfabetycznie Z-A") {
         if (filteredMovies) {
           filteredMovies.forEach((elm) => {
@@ -139,7 +137,7 @@ const renderSort = (e) => {
           }
         }
       } else if ("Wybierz" === e.target.value) {
-        // moviesArray.splice(0, moviesArray.length);
+        filteredMovies.splice(0, filteredMovies.length);
 
         moviesArray.forEach((el) => {
           renderMoviesListItem(
