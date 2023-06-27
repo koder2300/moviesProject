@@ -42,10 +42,21 @@ const renderSort = (e) => {
 
             return titleAscending;
           });
+
           if (
             typeof filteredMovies !== "undefined" &&
             filteredMovies.length > 0
           ) {
+            titleAscending.forEach((element) => {
+              renderMoviesListItem(
+                containerAll,
+                element.title,
+                element.author,
+                element.genres,
+                element.rating
+              );
+            });
+          } else {
             titleAscending.forEach((element) => {
               renderMoviesListItem(
                 containerAll,
