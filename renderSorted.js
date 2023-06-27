@@ -28,7 +28,10 @@ const renderSort = (e) => {
   sortArray.forEach((el) => {
     if (e.target.value === el) {
       if (el === "sortuj alfabetycznie A-Z") {
-        if (filteredMovies) {
+        if (
+          typeof filteredMovies !== "undefined" &&
+          filteredMovies.length > 0
+        ) {
           filteredMovies.forEach((elm) => {
             //
             let titleElements = elm;
@@ -85,7 +88,10 @@ const renderSort = (e) => {
         }
         ////////////////////
       } else if (el === "sortuj alfabetycznie Z-A") {
-        if (filteredMovies) {
+        if (
+          typeof filteredMovies !== "undefined" &&
+          filteredMovies.length > 0
+        ) {
           filteredMovies.forEach((elm) => {
             let titleElements = elm;
             titleDescending.push(titleElements);
@@ -112,11 +118,36 @@ const renderSort = (e) => {
               );
             });
           }
+        } else {
+          moviesArray.forEach((elm) => {
+            let titleElements = elm;
+            titleDescending.push(titleElements);
+            titleDescending.sort(function (a, b) {
+              return b.title.localeCompare(a.title, undefined, {
+                numeric: true,
+                sensitivity: "base",
+              });
+            });
+
+            return titleDescending;
+          });
+          titleDescending.forEach((element) => {
+            renderMoviesListItem(
+              containerAll,
+              element.title,
+              element.author,
+              element.genres,
+              element.rating
+            );
+          });
         }
       }
       //
       else if (el === "sortuj wg oceny rosnąco") {
-        if (filteredMovies) {
+        if (
+          typeof filteredMovies !== "undefined" &&
+          filteredMovies.length > 0
+        ) {
           filteredMovies.forEach((elm) => {
             //
             let ratingElements = elm;
@@ -138,9 +169,29 @@ const renderSort = (e) => {
               );
             });
           }
+        } else {
+          moviesArray.forEach((elm) => {
+            //
+            let ratingElements = elm;
+            ratingAscending.push(ratingElements);
+            ratingAscending = ratingAscending.sort(sortAscending);
+            return ratingAscending;
+          });
+          ratingAscending.forEach((element) => {
+            renderMoviesListItem(
+              containerAll,
+              element.title,
+              element.author,
+              element.genres,
+              element.rating
+            );
+          });
         }
       } else if (el === "sortuj wg oceny malejąco") {
-        if (filteredMovies) {
+        if (
+          typeof filteredMovies !== "undefined" &&
+          filteredMovies.length > 0
+        ) {
           filteredMovies.forEach((elm) => {
             let ratingsElements = elm;
             ratingDescending.push(ratingsElements);
@@ -161,6 +212,7 @@ const renderSort = (e) => {
               );
             });
           }
+        } else {
         }
       } else if ("Wybierz" === e.target.value) {
         filteredMovies.splice(0, filteredMovies.length);
