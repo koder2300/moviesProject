@@ -58,6 +58,8 @@ const renderSort = (e) => {
             });
           }
         } else {
+          console.log(moviesArray);
+
           moviesArray.forEach((elm) => {
             //
             let titleElements = elm;
@@ -71,7 +73,7 @@ const renderSort = (e) => {
 
             return titleAscending;
           });
-          moviesArray.forEach((element) => {
+          titleAscending.forEach((element) => {
             renderMoviesListItem(
               containerAll,
               element.title,
