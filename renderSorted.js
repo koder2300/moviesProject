@@ -28,7 +28,7 @@ const renderSort = (e) => {
   sortArray.forEach((el) => {
     if (e.target.value === el) {
       if (el === "sortuj alfabetycznie A-Z") {
-        moviesArray.forEach((elm) => {
+        changeAuthorSel.forEach((elm) => {
           //
           let titleElements = elm;
           titleAscending.push(titleElements);
