@@ -18,6 +18,8 @@ let changeAuthor = (e) => {
       );
     }
     if ("Wybierz" === e.target.value) {
+      filteredMovies.splice(0, filteredMovies.length);
+
       renderMoviesListItem(
         containerAll,
         el.title,
