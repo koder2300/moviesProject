@@ -56,17 +56,30 @@ const renderSort = (e) => {
                 element.rating
               );
             });
-          } else {
-            titleAscending.forEach((element) => {
-              renderMoviesListItem(
-                containerAll,
-                element.title,
-                element.author,
-                element.genres,
-                element.rating
-              );
-            });
           }
+        } else {
+          moviesArray.forEach((elm) => {
+            //
+            let titleElements = elm;
+            titleAscending.push(titleElements);
+            titleAscending = titleAscending.sort(function (a, b) {
+              return a.title.localeCompare(b.title, undefined, {
+                numeric: true,
+                sensitivity: "base",
+              });
+            });
+
+            return titleAscending;
+          });
+          moviesArray.forEach((element) => {
+            renderMoviesListItem(
+              containerAll,
+              element.title,
+              element.author,
+              element.genres,
+              element.rating
+            );
+          });
         }
         ////////////////////
       } else if (el === "sortuj alfabetycznie Z-A") {
