@@ -28,28 +28,54 @@ const renderSort = (e) => {
   sortArray.forEach((el) => {
     if (e.target.value === el) {
       if (el === "sortuj alfabetycznie A-Z") {
-        changeAuthorSel.forEach((elm) => {
-          //
-          let titleElements = elm;
-          titleAscending.push(titleElements);
-          titleAscending = titleAscending.sort(function (a, b) {
-            return a.title.localeCompare(b.title, undefined, {
-              numeric: true,
-              sensitivity: "base",
+        if (filteredMovies) {
+          filteredMovies.forEach((elm) => {
+            //
+            let titleElements = elm;
+            titleAscending.push(titleElements);
+            titleAscending = titleAscending.sort(function (a, b) {
+              return a.title.localeCompare(b.title, undefined, {
+                numeric: true,
+                sensitivity: "base",
+              });
             });
-          });
 
-          return titleAscending;
-        });
-        titleAscending.forEach((element) => {
-          renderMoviesListItem(
-            containerAll,
-            element.title,
-            element.author,
-            element.genres,
-            element.rating
-          );
-        });
+            return titleAscending;
+          });
+          titleAscending.forEach((element) => {
+            renderMoviesListItem(
+              containerAll,
+              element.title,
+              element.author,
+              element.genres,
+              element.rating
+            );
+          });
+        } else if (moviesArray) {
+          console.log(`not`);
+          moviesArray.forEach((elm) => {
+            //
+            let titleElements = elm;
+            titleAscending.push(titleElements);
+            titleAscending = titleAscending.sort(function (a, b) {
+              return a.title.localeCompare(b.title, undefined, {
+                numeric: true,
+                sensitivity: "base",
+              });
+            });
+
+            return titleAscending;
+          });
+          titleAscending.forEach((element) => {
+            renderMoviesListItem(
+              containerAll,
+              element.title,
+              element.author,
+              element.genres,
+              element.rating
+            );
+          });
+        }
       } else if (el === "sortuj alfabetycznie Z-A") {
         moviesArray.forEach((elm) => {
           let titleElements = elm;

@@ -8,7 +8,7 @@ let changeAuthor = (e) => {
     let listElement = el;
     sortedElements.push(listElement);
     if (el.author === e.target.value) {
-      changeAuthorSel.push(el);
+      filteredMovies.push(el);
       renderMoviesListItem(
         containerAll,
         el.title,
