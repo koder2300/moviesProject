@@ -41,6 +41,7 @@ let changeGenres = (e) => {
       if (flat.includes(elm)) {
       }
       if (elm === e.target.value) {
+        filteredMovies.push(el);
         renderMoviesListItem(
           containerAll,
           el.title,

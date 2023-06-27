@@ -20,18 +20,18 @@ idInput.addEventListener("input", function (event) {
     // el.innerHTML = "";
     el.parentNode.removeChild(el);
   });
-  for (let i = 0; i < moviesArray.length; i++) {
-    let moviesArr = moviesArray[i].title;
-
-    if (moviesArr.includes(val)) {
-      console.log(moviesArr);
+  ////////////////////////////
+  moviesArray.forEach((el) => {
+    console.log(el);
+    if (el.title.includes(val)) {
+      filteredMovies.push(el);
       renderMoviesListItem(
         containerAll,
-        moviesArr,
-        moviesArray[i].author,
-        moviesArray[i].genres,
-        moviesArray[i].rating
+        el.title,
+        el.author,
+        el.genres,
+        el.rating
       );
     }
-  }
+  });
 });

@@ -61,8 +61,6 @@ const renderSort = (e) => {
             });
           }
         } else {
-          console.log(moviesArray);
-
           moviesArray.forEach((elm) => {
             //
             let titleElements = elm;
@@ -213,6 +211,21 @@ const renderSort = (e) => {
             });
           }
         } else {
+          moviesArray.forEach((elm) => {
+            let ratingsElements = elm;
+            ratingDescending.push(ratingsElements);
+            ratingDescending = ratingDescending.sort(sortDescending);
+            return ratingDescending;
+          });
+          ratingDescending.forEach((element) => {
+            renderMoviesListItem(
+              containerAll,
+              element.title,
+              element.author,
+              element.genres,
+              element.rating
+            );
+          });
         }
       } else if ("Wybierz" === e.target.value) {
         filteredMovies.splice(0, filteredMovies.length);
