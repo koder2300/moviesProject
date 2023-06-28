@@ -16,6 +16,7 @@ const changeAutorSelect = (e) => {
         el.rating
       );
     }
+
     if ("Wybierz" === e.target.value) {
       filteredMovies.splice(0, filteredMovies.length);
 
@@ -28,13 +29,21 @@ const changeAutorSelect = (e) => {
       );
     }
   });
+
   arrGenres.unshift("Wybierz");
+  console.log(arrGenres);
+  renderInputItems(arrGenres, "selectGenres");
+
   //
   let arrGen = document.querySelector("#selectGenres");
   arrGen.remove();
   //
-  renderInputItems(arrGenres, "selectGenres");
+  document
+    .querySelector("#selectGenres")
+    .addEventListener("change", changeGenres);
 };
+
+//
 document
   .querySelector("#selectAuthor")
   .addEventListener("change", changeAutorSelect);
