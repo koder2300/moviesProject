@@ -1,11 +1,11 @@
 let arrGenres = [];
 const changeAutorSelect = (e) => {
-  // let listElements = document.querySelectorAll(".list");
-  // listElements.forEach((el) => {
-  //   el.parentNode.removeChild(el);
-  // });
+  let listElements = document.querySelectorAll(".list");
+  listElements.forEach((el) => {
+    el.parentNode.removeChild(el);
+  });
   //////
-  console.log(`klik`);
+  // console.log(`klik`);
   let uniqueChars = [];
   moviesArray.forEach((el) => {
     if (el.author === e.target.value) {

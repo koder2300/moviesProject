@@ -4,7 +4,8 @@ const renderGenresArr = (e) => {
     el.parentNode.removeChild(el);
   });
   moviesArray.forEach((el) => {
-    if (el.author === e.target.value) {
+    console.log(el.genres);
+    if (el.genres === e.target.value) {
       arrGenres.push(el.genres);
       console.log(el);
       //////////////////
