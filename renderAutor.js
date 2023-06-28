@@ -11,8 +11,6 @@ const changeAutorSelect = (e) => {
       arrGenres.push(el.genres);
       //////////////////
 
-      let uniqueArr = [];
-      let uniqueCharsArray = [];
       arrGenres.forEach((el) => {
         let elmGenres = el;
         elmGenres.forEach((elm) => {
