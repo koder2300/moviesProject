@@ -1,14 +1,16 @@
 let arrGenres = [];
 const changeAutorSelect = (e) => {
-  let listElements = document.querySelectorAll(".list");
-  listElements.forEach((el) => {
-    el.parentNode.removeChild(el);
-  });
+  // let listElements = document.querySelectorAll(".list");
+  // listElements.forEach((el) => {
+  //   el.parentNode.removeChild(el);
+  // });
   //////
+  console.log(`klik`);
   let uniqueChars = [];
   moviesArray.forEach((el) => {
     if (el.author === e.target.value) {
       arrGenres.push(el.genres);
+      // console.log(el);
       //////////////////
 
       arrGenres.forEach((el) => {
@@ -56,7 +58,7 @@ const changeAutorSelect = (e) => {
   //
   document
     .querySelector("#selectGenres")
-    .addEventListener("change", changeGenres);
+    .addEventListener("change", renderGenresArr);
 };
 
 //
