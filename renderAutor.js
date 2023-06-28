@@ -6,16 +6,11 @@ const changeAutorSelect = (e) => {
   listElements.forEach((el) => {
     el.parentNode.removeChild(el);
   });
-  //////
-  // console.log(`klik`);
 
   moviesArray.forEach((el) => {
     if (el.author === e.target.value) {
-      // console.log(el);
       uniqueEl.push(el);
       arrGenres.push(el.genres);
-      // console.log(el);
-      //////////////////
 
       arrGenres.forEach((el) => {
         let elmGenres = el;
@@ -28,7 +23,6 @@ const changeAutorSelect = (e) => {
         });
         return uniqueChars;
       });
-      ////////////////
       renderMoviesListItem(
         containerAll,
         el.title,
@@ -64,7 +58,6 @@ const changeAutorSelect = (e) => {
     .querySelector("#selectGenres")
     .addEventListener("change", renderGenresArr);
 };
-// console.log(uniqueEl);
 //
 document
   .querySelector("#selectAuthor")
