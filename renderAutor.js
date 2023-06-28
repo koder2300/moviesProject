@@ -5,9 +5,26 @@ const changeAutorSelect = (e) => {
     el.parentNode.removeChild(el);
   });
   //////
+  let uniqueChars = [];
   moviesArray.forEach((el) => {
     if (el.author === e.target.value) {
       arrGenres.push(el.genres);
+      //////////////////
+
+      let uniqueArr = [];
+      let uniqueCharsArray = [];
+      arrGenres.forEach((el) => {
+        let elmGenres = el;
+        elmGenres.forEach((elm) => {
+          if (!uniqueChars.includes(elm)) {
+            //
+            uniqueChars.push(elm);
+            return uniqueChars;
+          }
+        });
+        return uniqueChars;
+      });
+      ////////////////
       renderMoviesListItem(
         containerAll,
         el.title,
@@ -29,10 +46,11 @@ const changeAutorSelect = (e) => {
       );
     }
   });
+  //
 
-  arrGenres.unshift("Wybierz");
-  console.log(arrGenres);
-  renderInputItems(arrGenres, "selectGenres");
+  //
+  uniqueChars.unshift("Wybierz");
+  renderInputItems(uniqueChars, "selectGenres");
 
   //
   let arrGen = document.querySelector("#selectGenres");
