@@ -1,4 +1,6 @@
 let arrGenres = [];
+let uniqueChars = [];
+let uniqueEl = [];
 const changeAutorSelect = (e) => {
   let listElements = document.querySelectorAll(".list");
   listElements.forEach((el) => {
@@ -6,9 +8,11 @@ const changeAutorSelect = (e) => {
   });
   //////
   // console.log(`klik`);
-  let uniqueChars = [];
+
   moviesArray.forEach((el) => {
     if (el.author === e.target.value) {
+      // console.log(el);
+      uniqueEl.push(el);
       arrGenres.push(el.genres);
       // console.log(el);
       //////////////////
@@ -60,7 +64,7 @@ const changeAutorSelect = (e) => {
     .querySelector("#selectGenres")
     .addEventListener("change", renderGenresArr);
 };
-
+// console.log(uniqueEl);
 //
 document
   .querySelector("#selectAuthor")

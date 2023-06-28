@@ -3,21 +3,19 @@ const renderGenresArr = (e) => {
   listElements.forEach((el) => {
     el.parentNode.removeChild(el);
   });
-  moviesArray.forEach((el) => {
-    console.log(el.genres);
-    if (el.genres === e.target.value) {
-      arrGenres.push(el.genres);
-      console.log(el);
-      //////////////////
-      ////////////////
-      renderMoviesListItem(
-        containerAll,
-        el.title,
-        el.author,
-        el.genres,
-        el.rating
-      );
-    }
+  uniqueEl.forEach((el) => {
+    el.genres.forEach((elm) => {
+      if (elm === e.target.value) {
+        arrGenres.push(el);
+        renderMoviesListItem(
+          containerAll,
+          el.title,
+          el.author,
+          el.genres,
+          el.rating
+        );
+      }
+    });
 
     if ("Wybierz" === e.target.value) {
       filteredMovies.splice(0, filteredMovies.length);
