@@ -35,6 +35,6 @@ const changeAutorSelect = (e) => {
   //
   renderInputItems(arrGenres, "selectGenres");
 };
-// document
-//   .querySelector("#selectAuthor")
-//   .addEventListener("change", changeAutorSelect);
+document
+  .querySelector("#selectAuthor")
+  .addEventListener("change", changeAutorSelect);
