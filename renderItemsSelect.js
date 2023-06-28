@@ -37,21 +37,21 @@ let changeGenres = (e) => {
     el.parentNode.removeChild(el);
   });
   moviesArray.forEach((el) => {
+    if ("Wybierz" === e.target.value) {
+      renderMoviesListItem(
+        containerAll,
+        el.title,
+        el.author,
+        el.genres,
+        el.rating
+      );
+    }
     el.genres.forEach((elm) => {
       let flat = e.target.value;
       if (flat.includes(elm)) {
       }
       if (elm === e.target.value) {
         filteredMovies.push(el);
-        renderMoviesListItem(
-          containerAll,
-          el.title,
-          el.author,
-          el.genres,
-          el.rating
-        );
-      }
-      if ("Wybierz" === e.target.value) {
         renderMoviesListItem(
           containerAll,
           el.title,
