@@ -28,7 +28,7 @@ const renderGenresArr = (e) => {
           el.genres,
           el.rating
         );
-        // selectGen.innerHTML = "";
+        selectGen.innerHTML = "";
         uniqueChars.forEach((element) => {
           let option = document.createElement("option");
           let optionTxt = document.createTextNode(element);
