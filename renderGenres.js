@@ -8,7 +8,6 @@ const renderGenresArray = (e) => {
     filteredMovies.forEach((el) => {
       el.genres.forEach((elm) => {
         if (elm === e.target.value) {
-          // filteredMovies.splice(0, filteredMovies.length);
           arrayGenresSelect.splice(0, arrayGenresSelect.length);
 
           renderMoviesListItem(
@@ -22,7 +21,6 @@ const renderGenresArray = (e) => {
       });
 
       if ("Wybierz" === e.target.value) {
-        // filteredMovies.splice(0, filteredMovies.length);
         arrayGenresSelect.splice(0, arrayGenresSelect.length);
 
         renderMoviesListItem(
@@ -38,7 +36,6 @@ const renderGenresArray = (e) => {
     moviesArray.forEach((el) => {
       el.genres.forEach((elm) => {
         if (elm === e.target.value) {
-          // filteredMovies.splice(0, filteredMovies.length);
           arrayGenresSelect.splice(0, arrayGenresSelect.length);
 
           renderMoviesListItem(
@@ -52,7 +49,6 @@ const renderGenresArray = (e) => {
       });
 
       if ("Wybierz" === e.target.value) {
-        // filteredMovies.splice(0, filteredMovies.length);
         arrayGenresSelect.splice(0, arrayGenresSelect.length);
 
         renderMoviesListItem(
