@@ -6,7 +6,6 @@ const renderGenresArr = (e) => {
   uniqueEl.forEach((el) => {
     el.genres.forEach((elm) => {
       if (elm === e.target.value) {
-        console.log(`klik`);
         arrGenres.push(el);
         renderMoviesListItem(
           containerAll,
