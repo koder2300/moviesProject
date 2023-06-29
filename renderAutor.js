@@ -50,13 +50,12 @@ const changeAutorSelect = (e) => {
       let optionTxt = document.createTextNode(element);
       option.appendChild(optionTxt);
       selectGen.appendChild(option);
-      document
-        .querySelector("#selectGenres")
-        .addEventListener("change", renderGenresArray);
     });
   });
 };
-
+document
+  .querySelector("#selectGenres")
+  .addEventListener("change", renderGenresArray);
 document
   .querySelector("#selectAuthor")
   .addEventListener("change", changeAutorSelect);

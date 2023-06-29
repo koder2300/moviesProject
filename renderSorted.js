@@ -228,8 +228,6 @@ const renderSort = (e) => {
           });
         }
       } else if ("Wybierz" === e.target.value) {
-        filteredMovies.splice(0, filteredMovies.length);
-
         moviesArray.forEach((el) => {
           renderMoviesListItem(
             containerAll,
@@ -239,6 +237,21 @@ const renderSort = (e) => {
             el.rating
           );
         });
+      } else if ("wybierz" === e.target.value) {
+        if (
+          typeof filteredMovies !== "undefined" &&
+          filteredMovies.length > 0
+        ) {
+          filteredMovies.forEach((el) => {
+            renderMoviesListItem(
+              containerAll,
+              el.title,
+              el.author,
+              el.genres,
+              el.rating
+            );
+          });
+        }
       }
       //
     }
