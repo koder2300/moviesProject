@@ -1,14 +1,12 @@
 let changeAuthor = (e) => {
-  let sortedElements = [];
   let listElements = document.querySelectorAll(".list");
   listElements.forEach((el) => {
     el.parentNode.removeChild(el);
   });
   moviesArray.forEach((el) => {
     let listElement = el;
-    sortedElements.push(listElement);
+    console.log(sortedElements);
     if (el.author === e.target.value) {
-      autorSelect.push(el);
       filteredMovies.push(el);
       renderMoviesListItem(
         containerAll,
@@ -64,10 +62,10 @@ let changeGenres = (e) => {
   });
 };
 
-document
-  .querySelector("#selectGenres")
-  .addEventListener("change", changeGenres);
+// document
+//   .querySelector("#selectGenres")
+//   .addEventListener("change", changeGenres);
 
-document
-  .querySelector("#selectAuthor")
-  .addEventListener("change", changeAuthor);
+// document
+//   .querySelector("#selectAuthor")
+//   .addEventListener("change", changeAuthor);
