@@ -1,12 +1,12 @@
 let arrGenres = [];
 let uniqueChars = [];
 let uniqueEl = [];
+uniqueChars.unshift("Wybierz");
 const changeAutorSelect = (e) => {
   let listElements = document.querySelectorAll(".list");
   listElements.forEach((el) => {
     el.parentNode.removeChild(el);
   });
-
   moviesArray.forEach((el) => {
     if (el.author === e.target.value) {
       uniqueEl.push(el);
@@ -16,13 +16,12 @@ const changeAutorSelect = (e) => {
         let elmGenres = el;
         elmGenres.forEach((elm) => {
           if (!uniqueChars.includes(elm)) {
-            //
             uniqueChars.push(elm);
             return uniqueChars;
           }
         });
-        return uniqueChars;
       });
+
       renderMoviesListItem(
         containerAll,
         el.title,
@@ -43,22 +42,19 @@ const changeAutorSelect = (e) => {
         el.rating
       );
     }
+    selectGen.innerHTML = "";
+    uniqueChars.forEach((element) => {
+      let option = document.createElement("option");
+      let optionTxt = document.createTextNode(element);
+      option.appendChild(optionTxt);
+      selectGen.appendChild(option);
+      document
+        .querySelector("#selectGenres")
+        .addEventListener("change", renderGenresArr);
+    });
   });
-  //
-
-  //
-  uniqueChars.unshift("Wybierz");
-  renderInputItems(uniqueChars, "selectGenres");
-
-  //
-  let arrGen = document.querySelector("#selectGenres");
-  arrGen.remove();
-  //
-  document
-    .querySelector("#selectGenres")
-    .addEventListener("change", renderGenresArr);
 };
-//
+
 document
   .querySelector("#selectAuthor")
   .addEventListener("change", changeAutorSelect);

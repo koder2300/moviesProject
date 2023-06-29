@@ -17,12 +17,10 @@ idInput.addEventListener("input", function (event) {
   //
   let divListThird = document.querySelectorAll(".list");
   divListThird.forEach((el) => {
-    // el.innerHTML = "";
     el.parentNode.removeChild(el);
   });
   ////////////////////////////
   moviesArray.forEach((el) => {
-    console.log(el);
     if (el.title.includes(val)) {
       filteredMovies.push(el);
       renderMoviesListItem(

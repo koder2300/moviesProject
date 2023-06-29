@@ -63,7 +63,7 @@ let changeGenres = (e) => {
     });
   });
 };
-// moviesArray;
+
 document
   .querySelector("#selectGenres")
   .addEventListener("change", changeGenres);

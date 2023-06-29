@@ -106,11 +106,11 @@ const renderInputItems = (array, idItem) => {
 //
 renderInputItems(getAvailableAuthors(moviesArray), "selectAuthor");
 // renderInputItems(getAvailableTitles(moviesArray), "selectTitle");
+renderInputItems(sortArray, "selectSorted");
 renderInputItems(getAvailableGenres(moviesArray), "selectGenres");
 // renderInputItems(getAvailableRatings(moviesArray), "selectRating");
 //
 //    SORT SELECT
-renderInputItems(sortArray, "selectSorted");
 //
 let selectAut = document.querySelector("#selectAuthor");
 let selectTit = document.querySelector("#selectTitle");
