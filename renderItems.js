@@ -8,15 +8,15 @@ function sortN(a, b) {
 }
 
 const getAvailableAuthors = (moviesArrays) => {
-  let uniqueCharacter = [];
+  let uniqueCharArray = [];
   let uniqueArr = [];
   moviesArrays.forEach((el) => {
-    if (!uniqueCharacter.includes(el.author)) {
-      return uniqueCharacter.push(el.author);
+    if (!uniqueCharArray.includes(el.author)) {
+      return uniqueCharArray.push(el.author);
     }
   });
 
-  uniqueCharacter.forEach((elm) => {
+  uniqueCharArray.forEach((elm) => {
     // console.log(elm);
     let elArr = elm;
     uniqueArr.push(elArr);
@@ -35,43 +35,43 @@ const getAvailableAuthors = (moviesArrays) => {
 getAvailableAuthors(moviesArray);
 
 const getAvailableTitles = (moviesArrays) => {
-  let uniqueCharacter = [];
+  let uniqueCharArray = [];
   moviesArrays.forEach((el) => {
-    if (!uniqueCharacter.includes(el.title)) {
-      return uniqueCharacter.push(el.title);
+    if (!uniqueCharArray.includes(el.title)) {
+      return uniqueCharArray.push(el.title);
     }
   });
-  return uniqueCharacter;
+  return uniqueCharArray;
 };
 getAvailableTitles(moviesArray);
 //
 const getAvailableRatings = (moviesArrays) => {
-  let uniqueCharacter = [];
+  let uniqueCharArray = [];
   moviesArrays.forEach((el) => {
-    if (!uniqueCharacter.includes(el.rating)) {
-      return uniqueCharacter.push(el.rating);
+    if (!uniqueCharArray.includes(el.rating)) {
+      return uniqueCharArray.push(el.rating);
     }
   });
-  return uniqueCharacter;
+  return uniqueCharArray;
 };
 //
 const getAvailableGenres = (moviesArrays) => {
-  let uniqueCharacter = [];
+  let uniqueCharArray = [];
   let uniqueArr = [];
-  let uniqueCharacterArray = [];
+  let uniqueCharArrayArray = [];
   moviesArrays.forEach((el) => {
     let elmGenres = el.genres;
     elmGenres.forEach((elm) => {
-      if (!uniqueCharacter.includes(elm)) {
+      if (!uniqueCharArray.includes(elm)) {
         //
-        uniqueCharacter.push(elm);
-        return uniqueCharacter;
+        uniqueCharArray.push(elm);
+        return uniqueCharArray;
       }
     });
-    return uniqueCharacter;
+    return uniqueCharArray;
   });
 
-  uniqueCharacter.forEach((elm) => {
+  uniqueCharArray.forEach((elm) => {
     let elArr = elm;
     uniqueArr.push(elArr);
     uniqueArr.sort(function (a, b) {

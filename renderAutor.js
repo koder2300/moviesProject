@@ -1,6 +1,6 @@
 let arrayGenresSelect = [];
-let uniqueCharactersEl = [];
-uniqueCharactersEl.unshift("Wybierz");
+let uniqueCharEl = [];
+uniqueCharEl.unshift("Wybierz");
 //
 
 const changeAutorSelect = (e) => {
@@ -17,12 +17,12 @@ const changeAutorSelect = (e) => {
       arrayGenresSelect.forEach((el) => {
         let elmGenres = el;
         elmGenres.forEach((elm) => {
-          if (!uniqueCharactersEl.includes(elm)) {
-            uniqueCharactersEl.push(elm);
-            return uniqueCharactersEl;
+          if (!uniqueCharEl.includes(elm)) {
+            uniqueCharEl.push(elm);
+            return uniqueCharEl;
           }
         });
-        return uniqueCharactersEl;
+        return uniqueCharEl;
       });
 
       renderMoviesListItem(
@@ -34,7 +34,7 @@ const changeAutorSelect = (e) => {
       );
 
       selectGen.innerHTML = "";
-      uniqueCharactersEl.forEach((element) => {
+      uniqueCharEl.forEach((element) => {
         console.log(element);
         let option = document.createElement("option");
         let optionTxt = document.createTextNode(element);
