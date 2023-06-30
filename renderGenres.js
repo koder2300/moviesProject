@@ -1,4 +1,4 @@
-const renderGenresArray = (e) => {
+const changeAutorGenres = (e) => {
   let listElements = document.querySelectorAll(".list");
   listElements.forEach((el) => {
     el.parentNode.removeChild(el);

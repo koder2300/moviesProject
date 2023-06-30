@@ -35,7 +35,7 @@ const changeAutorSelect = (e) => {
 
       selectGen.innerHTML = "";
       uniqueCharEl.forEach((element) => {
-        console.log(element);
+        // console.log(element);
         let option = document.createElement("option");
         let optionTxt = document.createTextNode(element);
         option.appendChild(optionTxt);
@@ -58,7 +58,7 @@ const changeAutorSelect = (e) => {
 };
 document
   .querySelector("#selectGenres")
-  .addEventListener("change", renderGenresArray);
+  .addEventListener("change", changeAutorGenres);
 document
   .querySelector("#selectAuthor")
   .addEventListener("change", changeAutorSelect);
