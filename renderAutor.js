@@ -8,6 +8,8 @@ const changeAutorSelect = (e) => {
   listElements.forEach((el) => {
     el.parentNode.removeChild(el);
   });
+  filteredMovies.splice(0, filteredMovies.length);
+
   moviesArray.forEach((el) => {
     if (el.author === e.target.value) {
       filteredMovies.push(el);
@@ -31,10 +33,19 @@ const changeAutorSelect = (e) => {
         el.genres,
         el.rating
       );
+      selectGen.innerHTML = "";
+      uniqueChars.forEach((element) => {
+        let option = document.createElement("option");
+        let optionTxt = document.createTextNode(element);
+        option.appendChild(optionTxt);
+        selectGen.appendChild(option);
+      });
     }
 
     if ("Wybierz" === e.target.value) {
       filteredMovies.splice(0, filteredMovies.length);
+      // selectGen.value = "";
+      // uniqueChars.splice(0, uniqueChars.length);
 
       renderMoviesListItem(
         containerAll,
@@ -44,13 +55,6 @@ const changeAutorSelect = (e) => {
         el.rating
       );
     }
-    selectGen.innerHTML = "";
-    uniqueChars.forEach((element) => {
-      let option = document.createElement("option");
-      let optionTxt = document.createTextNode(element);
-      option.appendChild(optionTxt);
-      selectGen.appendChild(option);
-    });
   });
 };
 document
