@@ -32,6 +32,7 @@ const changeAutorSelect = (e) => {
         el.genres,
         el.rating
       );
+      console.log(uniqueCharEl);
 
       selectGen.innerHTML = "";
       uniqueCharEl.forEach((element) => {
