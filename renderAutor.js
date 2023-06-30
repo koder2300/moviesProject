@@ -58,7 +58,7 @@ const changeAutorSelect = (e) => {
 };
 document
   .querySelector("#selectGenres")
-  .addEventListener("change", changeAutorGenres);
+  .addEventListener("change", changeGenresSelect);
 document
   .querySelector("#selectAuthor")
   .addEventListener("change", changeAutorSelect);
