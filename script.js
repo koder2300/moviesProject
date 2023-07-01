@@ -10,6 +10,7 @@ let sortArray = [
 ];
 const containerAll = document.querySelector(".containerAll");
 //
+
 let filteredMovies = [];
 const renderMoviesListItem = (el, title, author, genres, rating) => {
   //
