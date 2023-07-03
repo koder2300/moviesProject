@@ -102,13 +102,20 @@ const renderMoviesListItem = (el, title, author, genres, rating) => {
   //
   //
 };
-
-for (let i = 0; i < moviesArray.length; i++) {
+function paginate(array, page_size, page_number) {
+  return array.slice((page_number - 1) * page_size, page_number * page_size);
+}
+let pageNumber = 1;
+let pageSize = 10;
+paginElementsMoviesArr = paginate(moviesArray, pageSize, pageNumber);
+//
+//
+for (let i = 0; i < paginElementsMoviesArr.length; i++) {
   renderMoviesListItem(
     containerAll,
-    moviesArray[i].title,
-    moviesArray[i].author,
-    moviesArray[i].genres,
-    moviesArray[i].rating
+    paginElementsMoviesArr[i].title,
+    paginElementsMoviesArr[i].author,
+    paginElementsMoviesArr[i].genres,
+    paginElementsMoviesArr[i].rating
   );
 }
