@@ -78,6 +78,7 @@ body {
   display: flex;
   gap: 1rem;
   padding: 10px;
+  margin: 0;
 }
 #selectAuthor {
   border-radius: 0.25rem;
