@@ -27,54 +27,109 @@ const renderSort = (e) => {
   //
   sortArray.forEach((el) => {
     if (e.target.value === el) {
-      if (el === "sortuj alfabetycznie A-Z") {
+      if (e.target.value === "sortuj alfabetycznie A-Z") {
+        //  SORT ARRAY MOVIES
+        if (resultMovies.length === 0 && filteredMovies.length === 0) {
+          //
+          moviesArray.forEach((elm) => {
+            moviesArray.slice(elm);
+
+            moviesArray = moviesArray.sort(function (a, b) {
+              return a.title.localeCompare(b.title, undefined, {
+                numeric: true,
+                sensitivity: "base",
+              });
+            });
+
+            return moviesArray;
+          });
+          //
+          moviesArray.forEach((el) => {
+            renderMoviesListItem(
+              containerAll,
+              el.title,
+              el.author,
+              el.genres,
+              el.rating
+            );
+          });
+        }
+        //////////////////////
         if (
           typeof filteredMovies !== "undefined" &&
           filteredMovies.length > 0
         ) {
           filteredMovies.forEach((elm) => {
+            filteredMovies.slice(elm);
             //
-            let titleElements = elm;
-            titleAscending.push(titleElements);
-            titleAscending = titleAscending.sort(function (a, b) {
+            filteredMovies = filteredMovies.sort(function (a, b) {
               return a.title.localeCompare(b.title, undefined, {
                 numeric: true,
                 sensitivity: "base",
               });
             });
 
-            return titleAscending;
+            return filteredMovies;
           });
+          if (resultMovies.length === 0) {
+            console.log(`klik`);
 
-          if (
-            typeof filteredMovies !== "undefined" &&
-            filteredMovies.length > 0
-          ) {
-            titleAscending.forEach((element) => {
-              renderMoviesListItem(
-                containerAll,
-                element.title,
-                element.author,
-                element.genres,
-                element.rating
-              );
-            });
+            if (
+              typeof filteredMovies !== "undefined" &&
+              filteredMovies.length > 0
+            ) {
+              filteredMovies.forEach((element) => {
+                renderMoviesListItem(
+                  containerAll,
+                  element.title,
+                  element.author,
+                  element.genres,
+                  element.rating
+                );
+              });
+            } else {
+              moviesArray.forEach((elm) => {
+                //
+                let titleElements = elm;
+                titleAscending.push(titleElements);
+                titleAscending = titleAscending.sort(function (a, b) {
+                  return a.title.localeCompare(b.title, undefined, {
+                    numeric: true,
+                    sensitivity: "base",
+                  });
+                });
+
+                return titleAscending;
+              });
+              titleAscending.forEach((element) => {
+                renderMoviesListItem(
+                  containerAll,
+                  element.title,
+                  element.author,
+                  element.genres,
+                  element.rating
+                );
+              });
+            }
           }
-        } else {
-          moviesArray.forEach((elm) => {
-            //
-            let titleElements = elm;
-            titleAscending.push(titleElements);
-            titleAscending = titleAscending.sort(function (a, b) {
-              return a.title.localeCompare(b.title, undefined, {
-                numeric: true,
-                sensitivity: "base",
-              });
-            });
+        }
 
-            return titleAscending;
+        // ///////////////// RESULT BIGGER MOVIES
+        console.log(resultMovies);
+        if (resultMovies > 0 || typeof resultMovies !== "undefined") {
+          console.log(`klik`);
+          //
+          resultMovies = resultMovies.sort(function (a, b) {
+            return a.title.localeCompare(b.title, undefined, {
+              numeric: true,
+              sensitivity: "base",
+            });
+            // return resultMovies
           });
-          titleAscending.forEach((element) => {
+
+          //
+          resultMovies.forEach((element) => {
+            // console.log(element);
             renderMoviesListItem(
               containerAll,
               element.title,
@@ -84,52 +139,107 @@ const renderSort = (e) => {
             );
           });
         }
+        //
         ////////////////////
       } else if (el === "sortuj alfabetycznie Z-A") {
+        //  SORT ARRAY MOVIES =0
+        if (resultMovies.length === 0 && filteredMovies.length === 0) {
+          //
+          moviesArray.forEach((elm) => {
+            moviesArray.slice(elm);
+
+            moviesArray = moviesArray.sort(function (a, b) {
+              return b.title.localeCompare(a.title, undefined, {
+                numeric: true,
+                sensitivity: "base",
+              });
+            });
+
+            return moviesArray;
+          });
+          //
+          moviesArray.forEach((el) => {
+            renderMoviesListItem(
+              containerAll,
+              el.title,
+              el.author,
+              el.genres,
+              el.rating
+            );
+          });
+        }
+        // END SORT MOVIES
         if (
           typeof filteredMovies !== "undefined" &&
           filteredMovies.length > 0
         ) {
           filteredMovies.forEach((elm) => {
-            let titleElements = elm;
-            titleDescending.push(titleElements);
-            titleDescending.sort(function (a, b) {
+            filteredMovies.slice(elm);
+            filteredMovies.sort(function (a, b) {
               return b.title.localeCompare(a.title, undefined, {
                 numeric: true,
                 sensitivity: "base",
               });
             });
 
-            return titleDescending;
+            return filteredMovies;
           });
-          if (
-            typeof filteredMovies !== "undefined" &&
-            filteredMovies.length > 0
-          ) {
-            titleDescending.forEach((element) => {
-              renderMoviesListItem(
-                containerAll,
-                element.title,
-                element.author,
-                element.genres,
-                element.rating
-              );
-            });
+          if (resultMovies.length === 0) {
+            console.log(`klik`);
+
+            if (
+              typeof filteredMovies !== "undefined" &&
+              filteredMovies.length > 0
+            ) {
+              filteredMovies.forEach((element) => {
+                renderMoviesListItem(
+                  containerAll,
+                  element.title,
+                  element.author,
+                  element.genres,
+                  element.rating
+                );
+              });
+            } else {
+              moviesArray.forEach((elm) => {
+                let titleElements = elm;
+                titleDescending.push(titleElements);
+                titleDescending.sort(function (a, b) {
+                  return b.title.localeCompare(a.title, undefined, {
+                    numeric: true,
+                    sensitivity: "base",
+                  });
+                });
+
+                return titleDescending;
+              });
+              titleDescending.forEach((element) => {
+                renderMoviesListItem(
+                  containerAll,
+                  element.title,
+                  element.author,
+                  element.genres,
+                  element.rating
+                );
+              });
+            }
           }
-        } else {
-          moviesArray.forEach((elm) => {
-            let titleElements = elm;
-            titleDescending.push(titleElements);
-            titleDescending.sort(function (a, b) {
-              return b.title.localeCompare(a.title, undefined, {
-                numeric: true,
-                sensitivity: "base",
-              });
+        }
+        //    RESULT MOVIES BIGGER
+        console.log(resultMovies);
+        if (resultMovies > 0 || typeof resultMovies !== "undefined") {
+          console.log(`klik`);
+          //
+          resultMovies = resultMovies.sort(function (a, b) {
+            return b.title.localeCompare(a.title, undefined, {
+              numeric: true,
+              sensitivity: "base",
             });
-
-            return titleDescending;
           });
-          titleDescending.forEach((element) => {
+
+          //
+          resultMovies.forEach((element) => {
+            console.log(element);
             renderMoviesListItem(
               containerAll,
               element.title,
@@ -139,68 +249,90 @@ const renderSort = (e) => {
             );
           });
         }
+        ///
       }
       //
       else if (el === "sortuj wg oceny rosnąco") {
-        if (
-          typeof filteredMovies !== "undefined" &&
-          filteredMovies.length > 0
-        ) {
-          filteredMovies.forEach((elm) => {
-            //
-            let ratingElements = elm;
-            ratingAscending.push(ratingElements);
-            ratingAscending = ratingAscending.sort(sortAscending);
-            return ratingAscending;
-          });
-          if (
-            typeof filteredMovies !== "undefined" &&
-            filteredMovies.length > 0
-          ) {
-            ratingAscending.forEach((element) => {
-              renderMoviesListItem(
-                containerAll,
-                element.title,
-                element.author,
-                element.genres,
-                element.rating
-              );
-            });
-          }
-        } else {
+        //  SORT ARRAY MOVIES =0
+        if (resultMovies.length === 0 && filteredMovies.length === 0) {
+          //
           moviesArray.forEach((elm) => {
-            //
-            let ratingElements = elm;
-            ratingAscending.push(ratingElements);
-            ratingAscending = ratingAscending.sort(sortAscending);
-            return ratingAscending;
+            moviesArray.slice(elm);
+
+            moviesArray = moviesArray.sort(sortAscending);
+
+            return moviesArray;
           });
-          ratingAscending.forEach((element) => {
+          //
+          moviesArray.forEach((el) => {
             renderMoviesListItem(
               containerAll,
-              element.title,
-              element.author,
-              element.genres,
-              element.rating
+              el.title,
+              el.author,
+              el.genres,
+              el.rating
             );
           });
         }
-      } else if (el === "sortuj wg oceny malejąco") {
+        //////////////////////
         if (
           typeof filteredMovies !== "undefined" &&
           filteredMovies.length > 0
         ) {
           filteredMovies.forEach((elm) => {
-            let ratingsElements = elm;
-            ratingDescending.push(ratingsElements);
-            ratingDescending = ratingDescending.sort(sortDescending);
-            return ratingDescending;
+            filteredMovies.slice(elm);
+            //
+            filteredMovies = filteredMovies.sort(sortAscending);
+            return filteredMovies;
           });
-          if (
-            typeof filteredMovies !== "undefined" &&
-            filteredMovies.length > 0
-          ) {
-            ratingDescending.forEach((element) => {
+          if (resultMovies.length === 0) {
+            console.log(`klik`);
+
+            if (
+              typeof filteredMovies !== "undefined" &&
+              filteredMovies.length > 0
+            ) {
+              filteredMovies.forEach((element) => {
+                renderMoviesListItem(
+                  containerAll,
+                  element.title,
+                  element.author,
+                  element.genres,
+                  element.rating
+                );
+              });
+            } else {
+              ///
+              moviesArray.forEach((elm) => {
+                //
+                let ratingElements = elm;
+                ratingAscending.push(ratingElements);
+                ratingAscending = ratingAscending.sort(sortAscending);
+                return ratingAscending;
+              });
+              ratingAscending.forEach((element) => {
+                renderMoviesListItem(
+                  containerAll,
+                  element.title,
+                  element.author,
+                  element.genres,
+                  element.rating
+                );
+              });
+              /////
+            }
+          }
+          /////
+          //    RESULT MOVIES BIGGER
+          console.log(resultMovies);
+          if (resultMovies > 0 || typeof resultMovies !== "undefined") {
+            console.log(`klik`);
+            //
+            resultMovies = resultMovies.sort(sortAscending);
+            console.log(resultMovies);
+            //
+            resultMovies.forEach((element) => {
+              // console.log(element);
               renderMoviesListItem(
                 containerAll,
                 element.title,
@@ -210,22 +342,102 @@ const renderSort = (e) => {
               );
             });
           }
-        } else {
+          ///
+          /////////
+        }
+        //////////////////////////////
+      } else if (el === "sortuj wg oceny malejąco") {
+        //  SORT ARRAY MOVIES =0
+        if (resultMovies.length === 0 && filteredMovies.length === 0) {
+          //
           moviesArray.forEach((elm) => {
-            let ratingsElements = elm;
-            ratingDescending.push(ratingsElements);
-            ratingDescending = ratingDescending.sort(sortDescending);
-            return ratingDescending;
+            moviesArray.slice(elm);
+
+            moviesArray = moviesArray.sort(sortDescending);
+
+            return moviesArray;
           });
-          ratingDescending.forEach((element) => {
+          //
+          moviesArray.forEach((el) => {
             renderMoviesListItem(
               containerAll,
-              element.title,
-              element.author,
-              element.genres,
-              element.rating
+              el.title,
+              el.author,
+              el.genres,
+              el.rating
             );
           });
+        }
+        //  COPY
+        if (
+          typeof filteredMovies !== "undefined" &&
+          filteredMovies.length > 0
+        ) {
+          filteredMovies.forEach((elm) => {
+            filteredMovies.slice(elm);
+            //
+            filteredMovies = filteredMovies.sort(sortDescending);
+            return filteredMovies;
+          });
+          if (resultMovies.length === 0) {
+            console.log(`klik`);
+
+            if (
+              typeof filteredMovies !== "undefined" &&
+              filteredMovies.length > 0
+            ) {
+              filteredMovies.forEach((element) => {
+                renderMoviesListItem(
+                  containerAll,
+                  element.title,
+                  element.author,
+                  element.genres,
+                  element.rating
+                );
+              });
+            } else {
+              ///
+              moviesArray.forEach((elm) => {
+                //
+                let ratingElements = elm;
+                ratingAscending.push(ratingElements);
+                ratingAscending = ratingAscending.sort(sortDescending);
+                return ratingAscending;
+              });
+              ratingAscending.forEach((element) => {
+                renderMoviesListItem(
+                  containerAll,
+                  element.title,
+                  element.author,
+                  element.genres,
+                  element.rating
+                );
+              });
+              /////
+            }
+          }
+          /////
+          //    RESULT MOVIES BIGGER
+          console.log(resultMovies);
+          if (resultMovies > 0 || typeof resultMovies !== "undefined") {
+            console.log(`klik`);
+            //
+            resultMovies = resultMovies.sort(sortDescending);
+            console.log(resultMovies);
+            //
+            resultMovies.forEach((element) => {
+              // console.log(element);
+              renderMoviesListItem(
+                containerAll,
+                element.title,
+                element.author,
+                element.genres,
+                element.rating
+              );
+            });
+          }
+          ///
+          /////////
         }
       } else if ("Wybierz" === e.target.value) {
         moviesArray.forEach((el) => {

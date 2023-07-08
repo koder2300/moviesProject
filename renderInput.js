@@ -22,7 +22,9 @@ idInput.addEventListener("input", function (event) {
   ////////////////////////////
   moviesArray.forEach((el) => {
     if (el.title.includes(val)) {
+      // console.log(el);
       filteredMovies.push(el);
+      resultMovies.push(el);
       renderMoviesListItem(
         containerAll,
         el.title,
