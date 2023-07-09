@@ -16,6 +16,7 @@ const changeAutorSelect = (e) => {
 
   moviesArray.forEach((el) => {
     if (el.author === e.target.value) {
+      selectSort.selectedIndex = 0;
       if (resultMovies.length > 0) {
         resultMovies.forEach((elm) => {
           renderMoviesListItem(
