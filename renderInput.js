@@ -1,5 +1,4 @@
 let searchMoviesDiv = document.querySelector(".searchMoviesTxt");
-let selectAuthor = document.querySelector("#selectAuthor");
 
 const renderInpCreated = () => {
   const chooseInput = document.createElement("input");
@@ -21,12 +20,12 @@ idInput.addEventListener("input", function (event) {
   ////////////////////////////
   moviesArray.forEach((el) => {
     if (el.title.includes(val)) {
+      selectAut.selectedIndex = 0;
+      selectGen.selectedIndex = 0;
       filteredMovies.push(el);
+      selectSort.selectedIndex = 0;
       resultMovies.push(el);
-      for (var i = 0; i < selectAuthor.length; i++) {
-        selectAuthor[i].selectedIndex = 0;
-      }
-      // selectAuthor.selectedIndex = 0;
+
       renderMoviesListItem(
         containerAll,
         el.title,

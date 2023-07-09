@@ -103,8 +103,8 @@ const renderInputItems = (array, idItem) => {
 };
 
 //
-renderInputItems(getAvailableAuthors(moviesArray), "selectAuthor");
 // renderInputItems(getAvailableTitles(moviesArray), "selectTitle");
+renderInputItems(getAvailableAuthors(moviesArray), "selectAuthor");
 renderInputItems(sortArray, "selectSorted");
 renderInputItems(getAvailableGenres(moviesArray), "selectGenres");
 // renderInputItems(getAvailableRatings(moviesArray), "selectRating");

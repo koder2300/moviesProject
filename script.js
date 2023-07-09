@@ -119,3 +119,19 @@ for (let i = 0; i < paginElementsMoviesArr.length; i++) {
     paginElementsMoviesArr[i].rating
   );
 }
+
+////////
+// let pageNumber = 1;
+// let pageSize = 10;
+// resultMovies = paginate(resultMovies, pageSize, pageNumber);
+// for (let i = 0; i < resultMovies.length; i++) {
+//   renderMoviesListItem(
+//     containerAll,
+//     resultMovies[i].title,
+//     resultMovies[i].author,
+//     resultMovies[i].genres,
+//     resultMovies[i].rating
+//   );
+// }
+
+////////////

@@ -6,9 +6,14 @@ const changeGenresSelect = (e) => {
   });
 
   if (typeof filteredMovies !== "undefined" && filteredMovies.length === 0) {
+    // let pageNumber = 1;
+    // let pageSize = 10;
+    // moviesArray = paginate(moviesArray, pageSize, pageNumber);
+    // console.log(moviesArray);
     moviesArray.forEach((el) => {
       el.genres.forEach((elm) => {
         if (elm === e.target.value) {
+          console.log(el);
           resultMovies.push(el);
           arrayGenresSelect.splice(0, arrayGenresSelect.length);
           renderMoviesListItem(
