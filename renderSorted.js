@@ -54,7 +54,6 @@ const renderSort = (e) => {
             );
           });
         }
-        //////////////////////
         if (
           typeof filteredMovies !== "undefined" &&
           filteredMovies.length > 0
@@ -72,8 +71,6 @@ const renderSort = (e) => {
             return filteredMovies;
           });
           if (resultMovies.length === 0) {
-            console.log(`klik`);
-
             if (
               typeof filteredMovies !== "undefined" &&
               filteredMovies.length > 0
@@ -114,22 +111,18 @@ const renderSort = (e) => {
           }
         }
 
-        // ///////////////// RESULT BIGGER MOVIES
-        console.log(resultMovies);
+        ///////// RESULT BIGGER MOVIES
         if (resultMovies > 0 || typeof resultMovies !== "undefined") {
-          console.log(`klik`);
           //
           resultMovies = resultMovies.sort(function (a, b) {
             return a.title.localeCompare(b.title, undefined, {
               numeric: true,
               sensitivity: "base",
             });
-            // return resultMovies
           });
 
           //
           resultMovies.forEach((element) => {
-            // console.log(element);
             renderMoviesListItem(
               containerAll,
               element.title,
@@ -185,8 +178,6 @@ const renderSort = (e) => {
             return filteredMovies;
           });
           if (resultMovies.length === 0) {
-            console.log(`klik`);
-
             if (
               typeof filteredMovies !== "undefined" &&
               filteredMovies.length > 0
@@ -226,9 +217,7 @@ const renderSort = (e) => {
           }
         }
         //    RESULT MOVIES BIGGER
-        console.log(resultMovies);
         if (resultMovies > 0 || typeof resultMovies !== "undefined") {
-          console.log(`klik`);
           //
           resultMovies = resultMovies.sort(function (a, b) {
             return b.title.localeCompare(a.title, undefined, {
@@ -239,7 +228,6 @@ const renderSort = (e) => {
 
           //
           resultMovies.forEach((element) => {
-            console.log(element);
             renderMoviesListItem(
               containerAll,
               element.title,
@@ -274,7 +262,6 @@ const renderSort = (e) => {
             );
           });
         }
-        //////////////////////
         if (
           typeof filteredMovies !== "undefined" &&
           filteredMovies.length > 0
@@ -286,8 +273,6 @@ const renderSort = (e) => {
             return filteredMovies;
           });
           if (resultMovies.length === 0) {
-            console.log(`klik`);
-
             if (
               typeof filteredMovies !== "undefined" &&
               filteredMovies.length > 0
@@ -302,9 +287,7 @@ const renderSort = (e) => {
                 );
               });
             } else {
-              ///
               moviesArray.forEach((elm) => {
-                //
                 let ratingElements = elm;
                 ratingAscending.push(ratingElements);
                 ratingAscending = ratingAscending.sort(sortAscending);
@@ -319,20 +302,14 @@ const renderSort = (e) => {
                   element.rating
                 );
               });
-              /////
             }
           }
-          /////
           //    RESULT MOVIES BIGGER
-          console.log(resultMovies);
           if (resultMovies > 0 || typeof resultMovies !== "undefined") {
-            console.log(`klik`);
             //
             resultMovies = resultMovies.sort(sortAscending);
-            console.log(resultMovies);
             //
             resultMovies.forEach((element) => {
-              // console.log(element);
               renderMoviesListItem(
                 containerAll,
                 element.title,
@@ -343,18 +320,14 @@ const renderSort = (e) => {
             });
           }
           ///
-          /////////
         }
-        //////////////////////////////
       } else if (el === "sortuj wg oceny malejąco") {
         //  SORT ARRAY MOVIES =0
         if (resultMovies.length === 0 && filteredMovies.length === 0) {
           //
           moviesArray.forEach((elm) => {
             moviesArray.slice(elm);
-
             moviesArray = moviesArray.sort(sortDescending);
-
             return moviesArray;
           });
           //
@@ -368,7 +341,6 @@ const renderSort = (e) => {
             );
           });
         }
-        //  COPY
         if (
           typeof filteredMovies !== "undefined" &&
           filteredMovies.length > 0
@@ -380,8 +352,6 @@ const renderSort = (e) => {
             return filteredMovies;
           });
           if (resultMovies.length === 0) {
-            console.log(`klik`);
-
             if (
               typeof filteredMovies !== "undefined" &&
               filteredMovies.length > 0
@@ -413,20 +383,13 @@ const renderSort = (e) => {
                   element.rating
                 );
               });
-              /////
             }
           }
-          /////
           //    RESULT MOVIES BIGGER
-          console.log(resultMovies);
           if (resultMovies > 0 || typeof resultMovies !== "undefined") {
-            console.log(`klik`);
             //
             resultMovies = resultMovies.sort(sortDescending);
-            console.log(resultMovies);
-            //
             resultMovies.forEach((element) => {
-              // console.log(element);
               renderMoviesListItem(
                 containerAll,
                 element.title,
@@ -436,8 +399,6 @@ const renderSort = (e) => {
               );
             });
           }
-          ///
-          /////////
         }
       } else if ("Wybierz" === e.target.value) {
         moviesArray.forEach((el) => {

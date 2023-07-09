@@ -8,9 +8,7 @@ const renderInpCreated = () => {
   searchMoviesDiv.appendChild(chooseInput);
 };
 renderInpCreated();
-///////////   INPUT  POPRAWNE
-let divListed = document.querySelector(`.titleType`);
-let divListSec = document.querySelector(".divList");
+
 //  INPUT POPRAWNY
 idInput.addEventListener("input", function (event) {
   let val = event.target.value;
@@ -22,7 +20,6 @@ idInput.addEventListener("input", function (event) {
   ////////////////////////////
   moviesArray.forEach((el) => {
     if (el.title.includes(val)) {
-      // console.log(el);
       filteredMovies.push(el);
       resultMovies.push(el);
       renderMoviesListItem(
