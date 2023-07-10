@@ -13,7 +13,7 @@ const changeGenresSelect = (e) => {
     moviesArray.forEach((el) => {
       el.genres.forEach((elm) => {
         if (elm === e.target.value) {
-          console.log(el);
+          filteredMovies.push(el);
           resultMovies.push(el);
           arrayGenresSelect.splice(0, arrayGenresSelect.length);
           renderMoviesListItem(
@@ -43,7 +43,7 @@ const changeGenresSelect = (e) => {
     filteredMovies.forEach((el) => {
       el.genres.forEach((elm) => {
         if (elm === e.target.value) {
-          arrayGenresSelect.splice(0, arrayGenresSelect.length);
+          // arrayGenresSelect.splice(0, arrayGenresSelect.length);
           filteredMovies.slice(el);
           resultMovies.push(el);
           renderMoviesListItem(
