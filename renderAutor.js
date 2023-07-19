@@ -8,7 +8,6 @@ const changeAutorSelect = (e) => {
   listElements.forEach((el) => {
     el.parentNode.removeChild(el);
   });
-
   filteredMovies.splice(0, filteredMovies.length);
   uniqueCharEl.splice(0, uniqueCharEl.length);
   arrayGenresSelect.splice(0, arrayGenresSelect.length);
