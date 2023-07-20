@@ -29,7 +29,7 @@ const renderSort = (e) => {
   sortArray.forEach((el) => {
     if (e.target.value === el) {
       if (e.target.value === "sortuj alfabetycznie A-Z") {
-        //  SORT ARRAY MOVIES
+        //  SORT ARRAY MOVIES ===0
         if (resultMovies.length === 0 && filteredMovies.length === 0) {
           //
           moviesArray.forEach((elm) => {
@@ -56,8 +56,7 @@ const renderSort = (e) => {
               el.rating
             );
           });
-        }
-        if (
+        } else if (
           typeof filteredMovies !== "undefined" &&
           filteredMovies.length > 0
         ) {

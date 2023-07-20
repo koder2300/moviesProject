@@ -24,7 +24,7 @@ idInput.addEventListener("input", function (event) {
       selectGen.selectedIndex = 0;
       filteredMovies.push(el);
       selectSort.selectedIndex = 0;
-      resultMovies.push(el);
+      // resultMovies.push(el);
 
       renderMoviesListItem(
         containerAll,

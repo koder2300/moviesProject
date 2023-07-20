@@ -15,8 +15,7 @@ const changeGenresSelect = (e) => {
         if (elm === e.target.value) {
           filteredMovies.push(el);
           resultMovies.push(el);
-          // resultMovies.splice(0, resultMovies.length);
-          // filteredMovies.splice(0, filteredMovies.length);
+
           arrayGenresSelect.splice(0, arrayGenresSelect.length);
           renderMoviesListItem(
             containerAll,
@@ -42,10 +41,12 @@ const changeGenresSelect = (e) => {
   }
   ////////
   else if (typeof filteredMovies !== "undefined" && filteredMovies.length > 0) {
+    //
     filteredMovies.forEach((el) => {
       el.genres.forEach((elm) => {
         if (elm === e.target.value) {
           // arrayGenresSelect.splice(0, arrayGenresSelect.length);
+
           filteredMovies.slice(el);
           resultMovies.push(el);
           renderMoviesListItem(
@@ -75,6 +76,7 @@ const changeGenresSelect = (e) => {
 
   // resultMovies.forEach((el) => {
   //   if (el.author === e.target.value) {
+  //
   //     filteredMovies.push(el);
   //     arrayGenresSelect.push(el.genres);
   //     arrayGenresSelect.forEach((el) => {
