@@ -25,13 +25,17 @@ const renderSort = (e) => {
     }
   }
 
-  //
+  // filteredMovies = [];
+  // resultMovies = [];
+
   sortArray.forEach((el) => {
     if (e.target.value === el) {
       if (e.target.value === "sortuj alfabetycznie A-Z") {
         //  SORT ARRAY MOVIES ===0
+
         if (resultMovies.length === 0 && filteredMovies.length === 0) {
           //
+
           moviesArray.forEach((elm) => {
             moviesArray.slice(elm);
 
@@ -44,9 +48,7 @@ const renderSort = (e) => {
 
             return moviesArray;
           });
-          resultMovies.splice(0, resultMovies.length);
-          filteredMovies.splice(0, filteredMovies.length);
-          //
+
           moviesArray.forEach((el) => {
             renderMoviesListItem(
               containerAll,
@@ -63,6 +65,7 @@ const renderSort = (e) => {
           filteredMovies.forEach((elm) => {
             filteredMovies.slice(elm);
             //
+
             filteredMovies = filteredMovies.sort(function (a, b) {
               return a.title.localeCompare(b.title, undefined, {
                 numeric: true,
@@ -113,9 +116,10 @@ const renderSort = (e) => {
           }
         }
 
-        ///////// RESULT BIGGER MOVIES
+        /////// RESULT BIGGER MOVIES
         if (resultMovies > 0 || typeof resultMovies !== "undefined") {
           //
+
           resultMovies = resultMovies.sort(function (a, b) {
             return a.title.localeCompare(b.title, undefined, {
               numeric: true,

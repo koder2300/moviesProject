@@ -1,19 +1,23 @@
 let resultMovies = [];
+
 const changeGenresSelect = (e) => {
   let listElements = document.querySelectorAll(".list");
   listElements.forEach((el) => {
     el.parentNode.removeChild(el);
   });
 
+  resultMovies = [];
   if (typeof filteredMovies !== "undefined" && filteredMovies.length === 0) {
     // let pageNumber = 1;
     // let pageSize = 10;
     // moviesArray = paginate(moviesArray, pageSize, pageNumber);
     // console.log(moviesArray);
+
+    resultMovies = [];
     moviesArray.forEach((el) => {
       el.genres.forEach((elm) => {
         if (elm === e.target.value) {
-          filteredMovies.push(el);
+          // filteredMovies.push(el);
           resultMovies.push(el);
 
           arrayGenresSelect.splice(0, arrayGenresSelect.length);
@@ -42,13 +46,15 @@ const changeGenresSelect = (e) => {
   ////////
   else if (typeof filteredMovies !== "undefined" && filteredMovies.length > 0) {
     //
+
+    resultMovies = [];
     filteredMovies.forEach((el) => {
       el.genres.forEach((elm) => {
         if (elm === e.target.value) {
           // arrayGenresSelect.splice(0, arrayGenresSelect.length);
 
-          filteredMovies.slice(el);
           resultMovies.push(el);
+
           renderMoviesListItem(
             containerAll,
             el.title,

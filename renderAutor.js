@@ -2,12 +2,12 @@ let arrayGenresSelect = [];
 let uniqueCharEl = [];
 let selectSort = document.querySelector("#selectSorted");
 //
-
 const changeAutorSelect = (e) => {
   let listElements = document.querySelectorAll(".list");
   listElements.forEach((el) => {
     el.parentNode.removeChild(el);
   });
+
   filteredMovies.splice(0, filteredMovies.length);
   uniqueCharEl.splice(0, uniqueCharEl.length);
   arrayGenresSelect.splice(0, arrayGenresSelect.length);
