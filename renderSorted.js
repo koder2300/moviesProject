@@ -25,17 +25,15 @@ const renderSort = (e) => {
     }
   }
 
-  // filteredMovies = [];
-  // resultMovies = [];
-
   sortArray.forEach((el) => {
     if (e.target.value === el) {
+      /////     SORT A-Z
       if (e.target.value === "sortuj alfabetycznie A-Z") {
         //  SORT ARRAY MOVIES ===0
 
         if (resultMovies.length === 0 && filteredMovies.length === 0) {
           //
-
+          console.log(`KLIK`);
           moviesArray.forEach((elm) => {
             moviesArray.slice(elm);
 
@@ -48,8 +46,9 @@ const renderSort = (e) => {
 
             return moviesArray;
           });
+          paginElementsMoviesArr = paginate(moviesArray, pageSize, pageNumber);
 
-          moviesArray.forEach((el) => {
+          paginElementsMoviesArr.forEach((el) => {
             renderMoviesListItem(
               containerAll,
               el.title,
@@ -80,7 +79,13 @@ const renderSort = (e) => {
               typeof filteredMovies !== "undefined" &&
               filteredMovies.length > 0
             ) {
-              filteredMovies.forEach((element) => {
+              paginElementsMoviesArr = paginate(
+                filteredMovies,
+                pageSize,
+                pageNumber
+              );
+              //
+              paginElementsMoviesArr.forEach((element) => {
                 renderMoviesListItem(
                   containerAll,
                   element.title,
@@ -103,7 +108,13 @@ const renderSort = (e) => {
 
                 return titleAscending;
               });
-              titleAscending.forEach((element) => {
+              paginElementsMoviesArr = paginate(
+                titleAscending,
+                pageSize,
+                pageNumber
+              );
+
+              paginElementsMoviesArr.forEach((element) => {
                 renderMoviesListItem(
                   containerAll,
                   element.title,
@@ -128,7 +139,9 @@ const renderSort = (e) => {
           });
 
           //
-          resultMovies.forEach((element) => {
+          paginElementsMoviesArr = paginate(resultMovies, pageSize, pageNumber);
+          //
+          paginElementsMoviesArr.forEach((element) => {
             renderMoviesListItem(
               containerAll,
               element.title,
@@ -139,7 +152,7 @@ const renderSort = (e) => {
           });
         }
         //
-        ////////////////////
+        ////////////////////////////////////////////
       } else if (el === "sortuj alfabetycznie Z-A") {
         //  SORT ARRAY MOVIES =0
         if (resultMovies.length === 0 && filteredMovies.length === 0) {

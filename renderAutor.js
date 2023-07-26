@@ -8,6 +8,11 @@ const changeAutorSelect = (e) => {
     el.parentNode.removeChild(el);
   });
 
+  ///
+  //
+  btn_next.addEventListener("click", renderItemsNext(filteredMovies));
+  btn_prev.addEventListener("click", renderItemsPrev(filteredMovies));
+
   filteredMovies.splice(0, filteredMovies.length);
   uniqueCharEl.splice(0, uniqueCharEl.length);
   arrayGenresSelect.splice(0, arrayGenresSelect.length);

@@ -51,8 +51,6 @@ const changeGenresSelect = (e) => {
     filteredMovies.forEach((el) => {
       el.genres.forEach((elm) => {
         if (elm === e.target.value) {
-          // arrayGenresSelect.splice(0, arrayGenresSelect.length);
-
           resultMovies.push(el);
 
           renderMoviesListItem(
